@@ -1,0 +1,43 @@
+<!--忘记密码-->
+<view class="container forget-password">
+  <div class="content">
+    <view class="form-col">
+      <label for='mobile' class='label'>手机号码</label>
+      <input id='mobile' class="form-input" maxlength="11" value="{{mobile}}" placeholder="请输入手机号码" placeholderStyle="color:#999" type="number" bindinput="inputMobile"></input>
+      <view class="icon form-input-clear" hidden="{{noMobile}}" bindtap="clearMobile"></view>
+    </view>
+
+    <view class="form-col">
+      <label for='imgCapthca' class='label'>验证码</label>
+      <input id='imgCapthca' class="form-input" maxlength="5" value="{{imgCaptcha}}" placeholder="请输入验证码" placeholderStyle="color:#999" type="text" bindinput="inputImg"></input>
+      <!-- <image class='captcha-image' src='{{imgUrl}}' bindtap="getNewImg"></image> -->
+      <canvas class='captcha-image' style="width:150rpx;height: 64rpx;" canvas-id="canvas" bindtap="onReady"></canvas>
+    </view>
+
+    <view class="form-col">
+      <label for='textCapthca' class='label'>短信验证码</label>
+      <input id='textCapthca' class="form-input" maxlength="4" value="{{textCaptcha}}" placeholder="请输入短信验证码" placeholderStyle="color:#999" type="text" bindinput="inputText"></input>
+      <view wx:if="{{!counting}}" class="getcaptcha-btn" bindtap="getText">获取短信验证码</view>
+      <view wx:else class="captcha-seconds">
+        已发送(<text>{{seconds}}</text>s)
+      </view>
+    </view>
+
+    <view class="form-col">
+      <label for='passwordA' class='label'>新密码</label>
+      <input id='passwordA' class="form-input" maxlength="18" value="{{passwordA}}" placeholder="6-18位字母加数字组合" placeholderStyle="color:#999" type="password" bindinput="inputPassA"></input>
+      <view class="icon form-input-clear" hidden="{{clearA}}" bindtap="clearPassA"></view>
+    </view>
+
+    <view class="form-col">
+      <label for='passwordB' class='label'>确认密码</label>
+      <input id='passwordB' class="form-input" maxlength="18" value="{{passwordB}}" placeholder="请输入确认密码" placeholderStyle="color:#999" type="password" bindinput="inputPassB"></input>
+      <view class="icon form-input-clear" hidden="{{clearB}}" bindtap="clearPassB"></view>
+    </view>
+    
+    <view class="confirmBox">
+      <div wx:if="{{ableNext}}" class="confirm-btn" bindtap="resetPwd">重置密码</div>
+      <div wx:else class="fakebtn">重置密码</div>
+    </view>
+  </div>
+</view>

@@ -1,0 +1,164 @@
+/* describe: 用于‘增值服务’ & ‘高端专享’ 详情页面的模块 */
+@import "/wxParse/wxParse.wxss";
+
+page{
+    background: #f0f0f0;
+}
+.product{
+    width: 100%;
+    min-height: 100%;
+}
+.wxParse-img {
+    max-width:100%;
+}
+    
+.product .swiper-section{
+    width: 750rpx;
+    height: 742rpx;
+    position: relative;
+}
+.product .swiper-section .swiper{
+    width: 750rpx;
+    height: 742rpx;
+}
+.product .swiper-section .swiper-img{
+    width: 750rpx;
+    height: 100%;
+}
+.product .swiper-section .picNum{
+    position: absolute;
+    right: 30rpx;
+    bottom: 40rpx;
+    width: 90rpx;
+    height: 40rpx;
+    text-align: center;
+    line-height: 40rpx;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    font-size: 24rpx;
+}
+.product .top-section{
+    width: 750rpx;
+    height: 260rpx;
+    background: #fff;
+}
+.product .top-section .const-p{
+    text-align: center;
+    font-size: 46.5rpx;
+    color: #c9a063;
+    padding-top: 45rpx;
+}
+.product .top-section .const-p .sfont{
+    font-size: 22.26rpx;
+    display: inline;
+}
+.product .top-section .const-p .bfont{
+    display: inline;
+}
+.product .top-section .const-p .mfont{
+    font-size:30rpx;
+}
+.product .top-section .const-p .mmfont{
+    margin-top: 5rpx;
+    font-size:22rpx;
+    color: #999;
+}
+.product .top-section .title-p{
+    text-align: center;
+    margin-top: 34rpx;
+    color: #333;
+    font-size: 30rpx;
+}
+.product .top-section .stitle-p{
+    text-align: center;
+    margin-top: 10rpx;
+    color: #666;
+    font-size: 24rpx;
+}
+.product .mid-section{
+    background: #fff;
+    margin-top: 12rpx;
+    padding: 40rpx 40rpx 40rpx 32rpx;
+    width: 678rpx;
+}
+.product .mid-section .table-col{
+    padding-left: 133rpx;
+    position: relative;
+    margin-bottom: 38rpx;
+    line-height: 36rpx;
+}
+.product .mid-section .table-col:last-child{
+    margin-bottom: 0;
+}
+.product .mid-section .table-col .table-title{
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 26rpx;
+    color: #333;
+    font-weight: 700;
+}
+.product .mid-section .table-col .table-content{
+    font-size: 24rpx;
+    color: #999;
+}
+.about-files{
+    margin-top: 20rpx;
+    width: 586rpx;
+    padding-left: 164rpx;
+    color: #999;
+    font-size: 24rpx;
+    line-height: 92rpx;
+    height: 92rpx;
+    background: #fff;
+    position: relative;
+}
+.about-files .about-title{
+    position: absolute;
+    left: 32rpx;
+    font-size: 26rpx;
+    color: #333;
+    font-weight: 700;
+    line-height: 92rpx;
+}
+.about-files .right-icon{
+    position: absolute;
+    right: 32rpx;
+}
+.gift-detail{
+    margin-top: 20rpx;
+    width: 100%;
+    background: #fff;
+    padding-bottom:130rpx;
+}
+.gift-detail .gift-title{
+    padding: 32rpx 0 47rpx 32rpx;
+    font-size: 28rpx;
+    color: #333;
+    font-weight: 700;
+}
+.gift-detail .detail-content{
+    width: 686rpx;
+    padding: 0 32rpx 130rpx 32rpx;
+    font-size: 28rpx;
+    color: #999;
+}
+.btn-section{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 750rpx;
+    height: 130rpx;
+    background: #f0f0f0;
+}
+.btn-section .btn{
+    width: 690rpx;
+    height: 80rpx;
+    margin: 25rpx 30rpx;
+    border-radius: 4rpx;
+    background: #c9a063;
+    text-align: center;
+    line-height: 80rpx;
+    color: #fff;
+    font-size: 26rpx;
+}

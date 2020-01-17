@@ -1,0 +1,75 @@
+<!-- 我的页面 -->
+<view class="My" wx:if="{{isFirst}}">
+    <view class="My-up">
+        <view class='card-box info-card {{level[meData.userLevel]}}' wx:if="{{down}}">
+            <view class='lf-box'>
+                <image class='head-img' src='{{meData.appHeadUrl || headUrl}}'></image>
+               <!--  <image class='head-img' src='{{headUrl}}'></image> -->
+            </view>
+            <view class='rt-box'>
+                <view class='p-1 s-font'>{{meData.name}}
+                    <!-- 会员级别 -->
+                    <view class='level-icon'>{{type[meData.type]}}</view>
+                </view>
+                <view class='p-2 d-font'>
+                    <view class='v-icon'></view>
+                    <!-- 会员级别 -->
+                    {{meData.userLevel}}
+                    <view class='diamond-icon'></view>
+                    当前积分{{meData.intergral}}
+                </view>
+                <view class='p-3 s-font' wx:if="{{isEyeOpen}}" bindtap='changeEye'>{{meData.nowTotalMoney}}
+                    <view class='eye open-eye'></view>
+                </view>
+                <view class='p-3 s-font' wx:else bindtap='changeEye' style="font-weight:bloder;">
+                  <view class='hide-points'></view>
+                  <view class='eye close-eye'></view>
+                </view>
+                <view class='p-4 d-font'>在投总资产（元）</view>
+            </view>
+        </view>
+        <view wx:else class="card-box info-card">
+            <!--占位图片 -->
+            <image style="width:690rpx;height:380rpx;" src="http://xm-file.oss-cn-beijing.aliyuncs.com/wchat/me-hd.png"></image>
+        </view>
+        <view class='card-box menu-box'>
+            <view class='menu-btn' data-type='1' bindtap='toList'>
+                <view class='menu-icon menu-icon1'></view>
+                <view class='menu-name'>类固定收益</view>
+            </view>
+            <view class='menu-btn' data-type='3' bindtap='toList'>
+                <view class='menu-icon menu-icon2'></view>
+                <view class='menu-name'>私募基金</view>
+            </view>
+            <view class='menu-btn' data-type='2' bindtap='toList'>
+                <view class='menu-icon menu-icon3'></view>
+                <view class='menu-name'>FOF基金</view>
+            </view>
+            <!-- <view class='menu-btn' data-type='4' bindtap='toList'> -->
+            <view class='menu-btn' bindtap="showNoData">
+                <view class='menu-icon menu-icon4'></view>
+                <view class='menu-name'>海外置业</view>
+            </view>
+            <!-- <view class='menu-btn' data-type='5' bindtap='toList'> -->
+            <view class='menu-btn' bindtap="showNoData">
+                <view class='menu-icon menu-icon5'></view>
+                <view class='menu-name'>保险保障</view>
+            </view>
+        </view>
+    </view>
+    <view class="My-down">
+        <view class="investor down-li">
+            <text class='lf-name'>我的投资顾问</text>
+            <text class='rt'>{{meData.faName || '未绑定' }}</text>
+        </view>
+        <view class="reskLevel down-li">
+            <text class='lf-name'>风险承受等级</text>
+            <text class='rt'>{{meData.survey || '未测评'}}</text>
+        </view>
+        <view class="share-btn down-li" bindtap="toShare">
+            <text class='lf-name'>分享邀请</text>
+            <view class='rt rt-conner'></view>
+        </view>
+        <view class="quit-btn down-li" bindtap='quit'>切换账号</view>
+    </view>
+</view>

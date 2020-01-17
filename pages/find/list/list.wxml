@@ -1,0 +1,252 @@
+<!--发现产品列表页-->
+<!-- 引入wxs文件 tag分割 -->
+<wxs module="filter" src="../../../utils/util.wxs"></wxs>
+<view class="list container">
+    <!-- 海外置业列表 -->
+    <view class="list-type" wx:if="{{type==1}}">
+        <view wx:if="{{down}}">
+            <!-- 循环结构 -->
+            <view 
+                class="list-col" 
+                data-id="{{item.id}}"
+                data-type="3" 
+                wx:for="{{listData}}"
+                wx:key="{{item.id}}" 
+                bindtap="toPage" 
+            >
+                <view class="col-img">
+                    <image class="img" src="{{item.smallPic}}"></image>
+                </view>
+                <view class="col-hd">
+                   <!-- 产品标题 --> 
+                    <view class="col-title"> {{item.name}}</view>
+                    <!-- 服务课时, 产权 -->
+                    <text class="txt">{{item.term}}</text>
+                </view>
+                <view class="col-bd">
+                    <!-- 申请范围, 所在位置--> 
+                    <view class="col-text">{{item.overseasLable}}</view>
+                    <!-- 产品点评 --> 
+                    <view class="col-tag">
+                        <text class="tag"  wx:for-item="tags" wx:key="{{filter.tag(item.productLable)}}" wx:for="{{filter.tag(item.productLable)}}">{{tags}}</text>
+                    </view>
+                </view>
+            </view>
+            <!-- 循环结束 -->
+            <view wx:if="{{upData.length>0}}">
+                <!-- 海外置业占位符 -->
+                <view class="list-col" wx:for="{{upData}}" wx:key="{{upData}}">
+                    <!--占位图片 -->
+                    <image style="width:670rpx;height:595rpx" src="http://xm-file.oss-cn-beijing.aliyuncs.com/wchat/product-img.png"></image>
+                </view>
+            </view>
+        </view>
+        <view wx:else>
+             <!-- 海外置业占位符 -->
+           <view class="list-col"  wx:for="{{[0,1,2,3]}}" wx:key="{{[0,1,2,3]}}">
+              <!--占位图片 -->
+              <image style="width:670rpx;height:595rpx" src="http://xm-file.oss-cn-beijing.aliyuncs.com/wchat/product-img.png"></image>
+          </view>
+        </view>
+        <!-- 暂无数据 -->
+        <view class="no-data" wx:if="{{listData.length == 0 && down}}">
+            <image class="no-data-img" src="https://xm-file.oss-cn-beijing.aliyuncs.com/cf/list-no-data.png"></image>
+            <view class="no-data-text">暂无数据</view>
+        </view>
+        <!-- 上拉加载更多 没有更多数据 -->
+        <view class="over-end" wx:if="{{up ==false && listData.length != 0}}">已经加载全部数据</view>
+    </view>
+    <!-- 海外留学列表 -->
+    <view class="list-type" wx:if="{{type==2}}">
+        <view wx:if="{{down}}">
+            <!-- 循环结构 -->
+            <view 
+                class="list-col" 
+                data-id="{{item.id}}"
+                data-type="4" 
+                wx:for="{{listData}}"
+                wx:key="{{item.id}}" 
+                bindtap="toPage" >
+                <view class="col-img">
+                    <image class="img" src="{{item.smallPic}}"></image>
+                </view>
+                <view class="col-hd">
+                   <!-- 产品标题 --> 
+                    <view class="col-title"> {{item.name}}</view>
+                    <!-- 服务课时, 产权 -->
+                    <text class="txt">{{item.term}}</text>
+                </view>
+                <view class="col-bd">
+                    <!-- 申请范围, 所在位置--> 
+                    <view class="col-text">{{item.overseasLable}}</view>
+                    <!-- 产品点评 --> 
+                    <view class="col-tag">
+                        <text class="tag"  wx:for-item="tags" wx:key="{{filter.tag(item.productLable)}}" wx:for="{{filter.tag(item.productLable)}}">{{tags}}</text>
+                    </view>
+                </view>
+            </view>
+            <!-- 循环结束 -->
+            <view wx:if="{{upData.length>0}}">
+                <!-- 海外置业占位符 -->
+                <view class="list-col" wx:for="{{upData}}" wx:key="{{upData}}">
+                    <!--占位图片 -->
+                    <image style="width:670rpx;height:595rpx" src="http://xm-file.oss-cn-beijing.aliyuncs.com/wchat/product-img.png"></image>
+                </view>
+            </view>
+        </view>
+        <view wx:else>
+            <!-- 海外留学占位符 -->
+           <view class="list-col"  wx:for="{{[0,1,2,3]}}" wx:key="{{[0,1,2,3]}}">
+              <!--占位图片 -->
+              <image style="width:670rpx;height:595rpx" src="http://xm-file.oss-cn-beijing.aliyuncs.com/wchat/product-img.png"></image>
+          </view>
+        </view>
+        <!-- 暂无数据 -->
+        <view class="no-data" wx:if="{{listData.length == 0 && down}}">
+            <image class="no-data-img" src="https://xm-file.oss-cn-beijing.aliyuncs.com/cf/list-no-data.png"></image>
+            <view class="no-data-text">暂无数据</view>
+        </view>
+        <!-- 上拉加载更多 没有更多数据 -->
+        <view class="over-end" wx:if="{{up ==false && listData.length != 0}}">已经加载全部数据</view>
+    </view>
+    <!-- 增值服务列表 -->
+    <view class="list-type add-server" wx:if="{{type==3}}">
+        <view class="top-section">
+            <view class="select-section">
+                <view class="select-btn {{tindex !== 0 && tindex == tabindex + 1 ? 'onsel' : ''}}" 
+                    wx:for="{{btnList}}" 
+                    wx:key="index" 
+                    wx:for-index="tabindex" 
+                    data-tabindex="{{tabindex + 1}}" 
+                    bindtap="openSelector">
+                    {{item}}
+                    <i class="down-icon" wx:if="{{tindex !== 0 && tindex == tabindex + 1}}"></i>
+                    <i class="up-icon" wx:else></i>
+                </view>
+            </view>
+            
+            <view class="select-list select-listA" 
+                catchtouchmove="return" 
+                bindtap="clickSelBg" 
+                wx:if="{{clickA}}">
+                <view class="all-selector {{selAindex == index ? 'onsel' : ''}}" 
+                    data-privilegeSort="{{item.privilegeSort}}"
+                    wx:for="{{selectListA}}" 
+                    bindtap="selectOne" 
+                    wx:key="index" 
+                    wx:for-index="index" 
+                    data-index="{{index}}">
+                    {{item.privilegeSortName}}
+                </view>
+            </view>
+            <view class="select-list select-listB" 
+                catchtouchmove="return" 
+                bindtap="clickSelBg" 
+                wx:if="{{clickB}}">
+                <view class="all-selector {{selBindex == index ? 'onsel' : ''}}" 
+                    data-intStart="{{item.intStart}}" 
+                    data-intEnd="{{item.intEnd}}" 
+                    wx:for="{{selectListB}}" 
+                    wx:key="index" 
+                    wx:for-index="index" 
+                    data-index="{{index}}" 
+                    bindtap="selectOne" >
+                    {{item.name}}
+                </view>
+            </view>
+            <view class="select-list select-listC" 
+                catchtouchmove="return" 
+                bindtap="clickSelBg" 
+                wx:if="{{clickC}}">
+                <view class="all-selector {{selCindex == index ? 'onsel' : ''}}" 
+                    data-level="{{item.level}}"
+                    wx:for="{{selectListC}}" 
+                    wx:key="index" 
+                    wx:for-index="index" 
+                    data-index="{{index}}" 
+                    bindtap="selectOne" >
+                    {{item.levelName}}
+                </view>
+            </view>
+        </view>
+
+        <view class="list-detail" wx:if="{{down}}">
+            <view class="each-list" 
+                wx:for="{{detailList}}" 
+                wx:key="index" 
+                data-id="{{item.id}}"
+                data-type="1" 
+                bindtap="toDetailpage">
+                <image class="detail-img" src="{{item.picUrl}}"></image>
+                <view class="detail-title">{{item.privilegeName}}</view>
+                <view class="level-title">
+                    <view class="level-icons" wx:for="{{item.levelStr}}" wx:key="index">{{item}}</view>
+                </view>
+                <view class="coast-title">
+                    <view class="number">{{item.xdIntegral}}</view>
+                    <view class="unit">鑫积分/次</view>
+                </view>
+            </view>
+        </view>
+        <view class="statu-sec" wx:else>
+            <!-- 海外留学占位符 -->
+           <view class="list-statu"  wx:for="{{[0,1,2,3]}}" wx:key="{{[0,1,2,3]}}">
+              <!--占位图片 -->
+              <image  class="statu-img" src="http://xm-file.oss-cn-beijing.aliyuncs.com/wchat/product-statuimg1.png"></image>
+          </view>
+        </view>
+        <!-- 暂无数据 -->
+        <view class="no-data" wx:if="{{detailList.length == 0 && down}}">
+            <image class="no-data-img" src="https://xm-file.oss-cn-beijing.aliyuncs.com/cf/list-no-data.png"></image>
+            <view class="no-data-text">暂无数据</view>
+        </view>
+        <!-- 上拉加载更多 没有更多数据 -->
+        <view class="over-end" wx:if="{{up ==false && detailList.length != 0}}">已经加载全部数据</view>
+        
+    </view>
+    <!-- 高端专享 -->
+    <view class="list-type vip-exclusive" wx:if="{{type==4}}">
+        <view class="list-detail" wx:if="{{down}}">
+            <view class="vip-list" 
+                wx:for="{{titleList}}" 
+                wx:key="index" 
+                wx:for-index="tabindex" 
+                data-tabindex="{{tabindex + 1}}">
+
+                <view class="classify-title">{{item}}</view>
+
+                <view class="each-content" 
+                    wx:for="{{vipList[tabindex]}}" 
+                    wx:key="index" 
+                    data-id="{{item.id}}" 
+                    data-type="2" 
+                    bindtap="toDetailpage">
+                    <image class="content-img" src="{{item.picUrl}}"></image>
+                    <view class="content-box">
+                        <view class="content-title">{{item.privilegeName}}</view>
+                        <view class="dontent-detail">{{item.privilegeReview}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="statu-sec" wx:else>
+            <!-- 海外留学占位符 -->
+           <view class="list-statu"  wx:for="{{[0,1,2,3]}}" wx:key="{{[0,1,2,3]}}">
+              <!--占位图片 -->
+              <image  class="statu-img" src="http://xm-file.oss-cn-beijing.aliyuncs.com/wchat/product-statuimg2.png"></image>
+          </view>
+        </view>
+        <!-- 暂无数据 -->
+        <view class="no-data" wx:if="{{titleList.length == 0 && down}}">
+            <image class="no-data-img" src="https://xm-file.oss-cn-beijing.aliyuncs.com/cf/list-no-data.png"></image>
+            <view class="no-data-text">暂无数据</view>
+        </view>
+        
+    </view>
+</view>
+<!--浮动按钮-->
+<view class="fixed-tool">
+    <navigator wx:if="{{!bindManager}}"  url="/pages/manager/manager" class="icon-tool icon-manager" hover-class="icon-manager-cur"></navigator>
+    <navigator url="/pages/share/share" class="icon-tool icon-share" hover-class="icon-share-cur"></navigator>
+    <view wx:if="{{returnTop}}" bindtap="returnToTop" class="icon-tool icon-top" hover-class="icon-top-cur"></view>
+</view>

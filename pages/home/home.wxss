@@ -1,0 +1,301 @@
+/*********************************************************************
+作者：吕彬
+Q  Q：286504720
+手机：15145090813（微信同号）
+home.wxss 精选页面样式
+*********************************************************************/
+
+.home {
+    background: url(http://xm-file.oss-cn-beijing.aliyuncs.com/wchat/home-bg.png) no-repeat;
+    background-size: 100% auto;
+    width: 100%;
+}
+
+.header {
+    width: 670rpx;
+    padding: 25rpx 40rpx 40rpx;
+    height: 40rpx;
+}
+
+.header-logo {
+    background: url(http://xm-file.oss-cn-beijing.aliyuncs.com/wchat/logo.png?1) no-repeat;
+    background-size: 100% 100%;
+    width: 361rpx;
+    height: 40rpx;
+    float: left;
+}
+
+.header-text {
+    float: right;
+    line-height: 40rpx;
+    font-size: 22rpx;
+    color: #8b7786;
+}
+
+.banner,
+.swiper {
+    height: 610rpx;
+    width: 750rpx;
+    margin-bottom: 25rpx;
+}
+
+.banner-box {
+    border-radius: 30rpx;
+    background: #fff;
+    width: 670rpx;
+    height: 595rpx;
+    overflow: hidden;
+    margin: 0 10rpx;
+    box-shadow: 0 5rpx 12rpx rgba(0, 0, 0, 0.2);
+}
+
+.banner-img-box {
+    width: 670rpx;
+    height: 350rpx;
+    overflow: hidden;
+}
+
+.banner-img {
+    width: 670rpx;
+    height: 350rpx;
+}
+
+.banner-hd {
+  padding:35rpx 42rpx 25rpx 42rpx;
+  line-height:36rpx;
+  overflow:hidden;
+  clear:both;
+}
+
+.banner-hd .title {
+    font-size: 36rpx;
+    max-height: 76rpx;
+    float: left;
+    font-weight: 700;
+    color:#333;
+    line-height:38rpx;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    display:-webkit-box;
+    -webkit-line-clamp:2;
+    -webkit-box-orient:vertical;
+
+}
+
+.banner-hd .title-t {
+    font-size: 36rpx;
+    height: 36rpx;
+    width: 100%;
+    float: left;
+    font-weight: 700;
+    color:#333;
+    line-height:36rpx;
+    white-space:nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.banner-hd .txt {
+    color: #cda87a;
+    float: right;
+    font-size: 24rpx;
+}
+
+.banner-bd {
+    clear: both;
+    padding: 20rpx 42rpx;
+}
+
+.banner-bd .level-box{
+    overflow:hidden;
+    padding-top:16rpx;
+}
+
+.banner-bd .levels-tag{
+    vertical-align:top;
+    display:inline-block;
+    text-align:center;
+    font-size:20rpx;
+    color:#cda87a;
+    background:#f5efe4;
+    border-radius:4rpx;
+    height:30rpx;
+    line-height:30rpx;
+    padding:0 15rpx;
+    margin-right:12rpx;
+}
+
+.integral-span{
+    position: absolute;
+    right: 0;
+    color: #c9a063;
+    font-size: 36rpx;
+}
+
+.integral-count{
+    color: #c9a063;
+    font-size: 28rpx;
+    display: inline;
+}
+
+.banner-bd .banner-content{
+    color:#888;
+    font-size:28rpx;
+    line-height:36rpx;
+    height: 36rpx;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    -webkit-line-clamp:1;
+    overflow:hidden;
+}
+
+.banner-text {
+    color: #888;
+    font-size: 28rpx;
+    line-height: 36rpx;
+}
+
+.banner-tag {
+    overflow: hidden;
+    padding-top:16rpx;
+
+}
+
+.banner-tag .tag {
+  vertical-align: top;
+  display: inline-block;
+  text-align: center;
+  font-size: 20rpx;
+  color: #cda87a;
+  background: #f5efe4;
+  border-radius: 4rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  padding: 0 15rpx;
+  margin-right:12rpx;
+}
+
+.list-column {
+    clear: both;
+    padding: 30rpx;
+    padding-bottom: 0;
+}
+
+.list-column .hd {
+    line-height: 36rpx;
+}
+
+.list-column .hd .title {
+    font-size: 36rpx;
+    color:#333;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.list-column .hd .icon-arrow {
+    background: url(http://xm-file.oss-cn-beijing.aliyuncs.com/wchat/icon-arrow.png) no-repeat;
+    background-size: 100% 100%;
+    width: 12rpx;
+    height: 22rpx;
+    display: inline-block;
+    margin: 0 15rpx;
+}
+
+.list-column .list-col {
+    clear: both;
+    overflow: hidden;
+    padding: 50rpx 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+.list-column .list-col:first-child{
+    padding-top: 40rpx;
+}
+
+.list-column .list-col:last-child {
+    border: 0;
+    padding-bottom: 40rpx;
+}
+
+.list-column .list-col .img-box {
+    float: left;
+    width: 240rpx;
+    height: 195rpx;
+    overflow: hidden;
+    margin-right: 44rpx;
+}
+
+.list-column .list-col .img-box .img {
+    width: 240rpx;
+    height: 195rpx;
+}
+
+.list-column .list-col .title {
+    font-size: 36rpx;
+    color:#333;
+    font-weight: 600;
+    text-overflow: ellipsis;
+    line-height:45rpx;
+    display:-webkit-box;
+    -webkit-line-clamp:2;
+    overflow:hidden;
+    -webkit-box-orient:vertical;
+    height: 90rpx;
+    margin-bottom:4rpx;
+}
+
+.list-column .list-col .text {
+    font-size: 24rpx;
+    color: #888;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.fixed-tool {
+    position: fixed;
+    bottom: 120rpx;
+}
+
+/* 鑫享会 */
+.list-column .xxh-box{
+    padding-top: 40rpx;
+    height: 530rpx;
+    width: 690rpx;
+    display:flex;
+}
+.list-column .xxh-box .xxh-list{
+    float: left;
+    width: 330rpx;
+    height: 530rpx;
+    margin-left: 20rpx;
+    overflow: hidden;
+}
+.list-column .xxh-box .xxh-list:first-child{
+    margin-left: 0;
+}
+.list-column .xxh-box .xxh-list .img-box{
+    width: 330rpx;
+    height: 386rpx;
+    overflow: hidden;
+    border-radius: 14rpx;
+    position: relative;
+}
+.list-column .xxh-box .xxh-list .xxh-img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.list-column .xxh-box .xxh-list .xxh-title{
+    width: 330rpx;
+    font-size: 36rpx;
+    margin-top: 18rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}

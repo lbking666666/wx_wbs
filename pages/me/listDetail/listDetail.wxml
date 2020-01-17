@@ -1,0 +1,98 @@
+<!--pages/me/listDeatil/listDeatil.wxml-->
+<view class="detail">
+  <view class="detail-up">
+    <view class='info-card'>
+      <view class='title-p'>{{detailData.productName}}</view>
+      <view class='money-p'>
+        <text wx:if="{{productType == 1}}">{{detailData.signAmount}}</text>
+        <text wx:else>{{detailData.signAmountStr}}</text>
+        <image class='img' wx:if="{{investStatu == 0}}" src='http://xm-file.oss-cn-beijing.aliyuncs.com/wchat/investStatus-1.png'></image>
+        <image class='img' wx:else src='http://xm-file.oss-cn-beijing.aliyuncs.com/wchat/investStatus-2.png'></image>
+      </view>
+      <view class='font-p' wx:if="{{productType == 1}}">在投金额(元)</view>
+      <view class='font-p' wx:else>在投金额(万元)</view>
+    </view>
+
+    <view wx:if="{{productType == 1}}" class='info-detail info-detail1'>
+      <view class='info'>
+        <view class='info-icon info-icon1'></view>
+        <view class='info-name'>起息日期</view>
+        <view class='info-content'>{{detailData.valueDate}}</view>
+      </view>
+      <view class='info'>
+        <view class='info-icon info-icon2'></view>
+        <view class='info-name'>到期日期</view>
+        <view class='info-content'>{{detailData.refundTime}}</view>
+      </view>
+      <view class='info'>
+        <view class='info-icon info-icon3'></view>
+        <view class='info-name'>投资期限</view>
+        <view class='info-content'>{{detailData.term}}</view>
+      </view>
+      <view class='info'>
+        <view class='info-icon info-icon4'></view>
+        <view class='info-name'>业绩比较基准</view>
+        <view class='info-content'>{{detailData.annualReturn}}</view>
+      </view>
+      <view class='info'>
+        <view class='info-icon info-icon5'></view>
+        <view class='info-name'>还款方式</view>
+        <view class='info-content'>{{detailData.planRepaymentType}}</view>
+      </view>
+      <view class='info'>
+        <view class='info-icon info-icon6'></view>
+        <view class='info-name'>投资收益(元)</view>
+        <view class='info-content'>{{detailData.earnings}}</view>
+      </view>
+    </view>
+    <view wx:else class='info-detail info-detail2'>
+      <view class='info'>
+        <view class='info-icon info-icon1'></view>
+        <view class='info-name'>投资期限</view>
+        <view class='info-content'>{{detailData.term}}</view>
+      </view>
+      <view class='info'>
+        <view class='info-icon info-icon2'></view>
+        <view class='info-name'>认购净值</view>
+        <view class='info-content'>{{detailData.netValue}}</view>
+      </view>
+      <view class='info'>
+        <view class='info-icon info-icon3'></view>
+        <view class='info-name'>风险等级</view>
+        <view class='info-content'>{{detailData.memo}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view wx:if="{{productType == 1 && hasReturn}}" class="detail-middle">
+    <view class='title'>回款记录</view>
+    <view wx:for="{{dataList}}" wx:key="index" class='record-li'>
+      <view class="record-left">
+        <view class="record-time">{{item.refundTime}}</view>
+        
+        <view class="record-status" wx:if="{{item.refundStatus == 1}}">已还</view>
+        <view class="record-status" wx:else>待还</view>
+      </view>
+
+      <view class="record-right" wx:if="{{item.earn != null && item.earn != ''}}">
+        <view class="record-money" >{{item.earn || '0.00'}}</view>
+        <view class="record-status">收益(元)</view>
+      </view>
+      <view class="record-right" wx:else>
+        <view class="record-money">{{item.amount || '0.00'}}</view>
+        <view class="record-status">本金(元)</view>
+      </view>
+    </view>
+  </view>
+
+  <view wx:if="{{hasPdf}}" class="detail-down">
+    <view class='title'>相关协议</view>
+    <view class='pdf-ul'>
+      <view wx:for="{{pdfList}}" wx:key="index" class='pdf-li'>
+        <view class="pdf-icon"></view>
+        <view class='pdf-title'>{{item.fileName}}</view>
+        <view class='pdf-btn' data-pdflink='{{item.url}}' bindtap='openPdf'>浏览</view>
+      </view>
+    </view>
+  </view>
+</view>

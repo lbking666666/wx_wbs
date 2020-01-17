@@ -1,0 +1,4 @@
+<!--视频播放页面-->
+<view class="play-video">
+    <video src="{{videoSrc}}" class="video" controls autoplay direction="90"></video>
+</view>

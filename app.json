@@ -1,0 +1,53 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/find/find",
+    "pages/find/list/list",
+    "pages/find/page/page",
+    "pages/find/product/product",
+    "pages/find/video/video",
+    "pages/me/me",
+    "pages/me/list/list",
+    "pages/me/listDetail/listDetail",
+    "pages/login/login",
+    "pages/login/quicklogin/qlogin",
+    "pages/regist/regist",
+    "pages/regist/forget/forget",
+    "pages/regist/agreement/agreement",
+    "pages/regist/setpwd/setpwd",
+    "pages/share/share",
+    "pages/manager/manager"
+  ],
+  "window": {
+    "backgroundColor": "#331235",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#331235",
+    "navigationBarTitleText": "鑫茂荣信财富",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#999",
+    "selectedColor": "#c39c66",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "精选",
+        "iconPath": "img/bar_home.png",
+        "selectedIconPath": "img/bar_home1.png"
+      },
+      {
+        "pagePath": "pages/find/find",
+        "text": "发现",
+        "iconPath": "img/bar_find.png",
+        "selectedIconPath": "img/bar_find1.png"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "我的",
+        "iconPath": "img/bar_me.png",
+        "selectedIconPath": "img/bar_me1.png"
+      }
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+.log-list {
+  display: flex;
+  flex-direction: column;
+  padding: 40rpx;
+}
+.log-item {
+  margin: 10rpx;
+}
+.nobg{
+  background: #fff;
+}
+.reg {
+  font-size: 28rpx;
+  color: #999;
+  margin-top: 80rpx;
+}
+.reg .c8a063 { 
+  color: #c8a063
+}

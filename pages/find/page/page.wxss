@@ -1,0 +1,523 @@
+/*********************************************************************
+作者：吕彬
+Q  Q：286504720
+手机：15145090813（微信同号）
+page.wxss 详情页面样式
+*********************************************************************/
+
+@import "/wxParse/wxParse.wxss";
+
+/* 咨询 活动 */
+page {
+  background: #fff;
+}
+.article {
+  background: #fff;
+  padding: 30rpx;
+  padding-bottom: 90rpx;
+  overflow: hidden;
+}
+
+.article .title {
+  text-align: center;
+  font-size: 30rpx;
+  line-height: 48rpx;
+  color: #252525;
+}
+.article-news .title {
+  text-align: left;
+  font-size: 44rpx;
+  color: #333;
+}
+
+.article .date {
+  color: #666;
+  font-size: 26rpx;
+  padding: 30rpx 0;
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 30rpx;
+}
+.article-news view {
+  overflow: visible;
+}
+.article-news .date {
+  text-align: left;
+  font-size: 26rpx;
+  color: #999;
+  border-bottom: 0;
+  margin-bottom: 50rpx;
+}
+
+.article .active-about {
+  padding: 30rpx 0;
+  font-size: 24rpx;
+  color: #999;
+}
+
+.article .detail-col {
+  font-size: 26rpx;
+  padding: 16rpx 0;
+  color: #666;
+}
+
+.article .detail-col .lable {
+  float: left;
+  margin-right: 60rpx;
+}
+
+.article .content {
+  padding: 30rpx 0;
+  color: #333;
+}
+.music-box {
+  margin-bottom: 60rpx;
+  position: relative;
+  padding: 5px;
+}
+
+.music-border {
+  border-radius: 2px;
+  background: #fff;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.07), 0 1px 5px 0 rgba(0, 0, 0, 0.1);
+}
+.music-button {
+  float: left;
+  width: 66px;
+  height: 66px;
+  position: relative;
+}
+.music-button .icon-btn {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 66px;
+  height: 66px;
+  background: transparent;
+  transition: all 0.1s ease;
+}
+.music-button .icon-btn-cur {
+  background: transparent;
+}
+.music-button .icon-btn .icon-play {
+  background: url(//xm-file.oss-cn-beijing.aliyuncs.com/wchat/icon-play.png)
+    no-repeat center center;
+  background-size: 50% 50%;
+  border-radius: 20px;
+  width: 20px;
+  margin: 20px;
+  height: 20px;
+  border: 2px solid #fff;
+}
+.music-button .icon-btn .icon-pause {
+  background: url(//xm-file.oss-cn-beijing.aliyuncs.com/wchat/icon-pause.png)
+    no-repeat center center;
+  background-size: 50% 50%;
+  border-radius: 20px;
+  width: 16px;
+  height: 16px;
+  margin: 40px 0 0 40px;
+  border: 2px solid #fff;
+}
+.music-img {
+  width: 66px;
+  height: 66px;
+}
+.music-con {
+  margin-left: 66px;
+  padding: 14px 7px 0 10px;
+  height: 66px;
+  box-sizing: border-box;
+}
+.music-title {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin: 0 0 13px 5px;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+  cursor: default;
+  box-sizing: border-box;
+  line-height: 16px;
+  padding-bottom: 2px;
+  font-size: 14px;
+}
+.music-controls {
+  overflow: hidden;
+}
+.process {
+  float: left;
+  width: 64%;
+  margin: 0;
+}
+.music-time {
+  float: right;
+  width: 36%;
+  box-sizing: border-box;
+  padding-left: 4%;
+  color: #999;
+  font-size: 12px;
+}
+.video-box {
+  width: 100%;
+  padding-bottom: 60rpx;
+}
+.video {
+  width: 100%;
+}
+.video .video-player-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -62rpx;
+  margin-left: -62rpx;
+  width: 124rpx;
+  height: 124rpx;
+}
+/* pdf */
+.content-pdf {
+  padding: 50rpx 0;
+  position: relative;
+}
+.icon-pdf {
+  position: absolute;
+  left: 0;
+  top: 1.05rem;
+  width: 1.175rem;
+  height: 1.575rem;
+  background: url(//xm-file.oss-cn-beijing.aliyuncs.com/cf/my-wealth/PFD_icon.png)
+    no-repeat;
+  background-size: 100% 100%;
+}
+.pdf-name {
+  font-size: 28rpx;
+  font-weight: 700;
+  max-width: 523rpx;
+  overflow: hidden;
+  color: #666;
+  padding-left: 77rpx;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.pdf-link {
+  font-size: 28rpx;
+  font-weight: 700;
+  color: #c9a063;
+  position: absolute;
+  right: 0;
+  top: 54rpx;
+  padding-bottom: 10rpx;
+  border-bottom: 3rpx solid #c9a063;
+}
+
+/* 海外产品 */
+.article-box {
+  padding-bottom: 90rpx;
+}
+.article-box .article-hd {
+  height: 400rpx;
+  width: 100%;
+  position: relative;
+  clear: both;
+  overflow: hidden;
+}
+
+.article-box .title {
+  position: absolute;
+  top: 200rpx;
+  left: 0;
+  padding: 0 30rpx;
+  font-size: 36rpx;
+  color: #fff;
+}
+
+.article-box .text {
+  position: absolute;
+  bottom: 0;
+  height: 30rpx;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 30rpx 0;
+  color: #fff;
+  width: 100%;
+}
+
+.article-box .text .txt {
+  float: left;
+  width: 50%;
+  color: #fff;
+  font-size: 30rpx;
+  line-height: 30rpx;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.article-box .text .adress {
+  border-right: 1rpx solid #eee;
+}
+
+.article-box .article-bd {
+  clear: both;
+  overflow: hidden;
+}
+
+.article-box .article-tab-hd {
+  padding: 30rpx 0;
+  position: relative;
+  border-bottom: 1px solid #ddd;
+}
+
+.article-box .article-tab-hd .item {
+  float: left;
+  font-size: 30rpx;
+  line-height: 50rpx;
+  text-align: center;
+  color: #333;
+  width: 50%;
+}
+
+.article-box .article-tab-hd .item.active {
+  color: #c9a063;
+}
+
+.article-box .article-tab-hd .line {
+  height: 4rpx;
+  width: 70rpx;
+  background: #c9a063;
+  position: absolute;
+  bottom: 0;
+}
+
+.article-box .article-tab-hd .cur-0 {
+  left: 20%;
+}
+
+.article-box .article-tab-hd .cur-1 {
+  left: 70%;
+}
+
+.article-box .article-tab-bd {
+  padding: 50rpx 30rpx;
+  overflow: hidden;
+}
+.wxParse-img {
+  max-width: 100%;
+}
+.article-box .col-title {
+  font-size: 36rpx;
+  color: #000;
+  padding-bottom: 30rpx;
+}
+
+.pt-30 {
+  padding-top: 30rpx;
+}
+
+.article-box .col-list {
+  clear: both;
+  padding: 35rpx 20rpx 35rpx 50rpx;
+  line-height: 50rpx;
+  font-size: 32rpx;
+  color: #999;
+  position: relative;
+  border-bottom: 1rpx solid #ddd;
+}
+
+.article-box .col-list .icon {
+  float: left;
+  width: 30rpx;
+  height: 34rpx;
+  margin: 8rpx 8rpx 0 0;
+}
+
+.article-box .col-list .icon-pdf {
+  background: url(https://xm-file.oss-cn-beijing.aliyuncs.com/cf/pdf@2x.png)
+    no-repeat;
+  background-size: 100% 100%;
+}
+
+.video-list {
+  float: left;
+  width: 340rpx;
+  margin: 6rpx;
+}
+
+.video-list .video-box {
+  position: relative;
+  width: 340rpx;
+  height: 250rpx;
+}
+
+.video-list .video-box .img {
+  height: 250rpx;
+  width: 340rpx;
+}
+
+.video-list .video-list-txt {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 12rpx 0 30rpx;
+  color: #999;
+  font-size: 32rpx;
+}
+
+.video-list .play {
+  width: 66rpx;
+  height: 66rpx;
+  background: url(//xm-file.oss-cn-beijing.aliyuncs.com/cf/white-play-icon.png)
+    no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -33rpx;
+  margin-top: -33rpx;
+  z-index: 9;
+}
+
+/*风险提示*/
+
+.risk {
+  background: #f4f4f3;
+  padding: 30rpx;
+  font-size: 26rpx;
+}
+
+.risk .risk-hd {
+  color: #666;
+  font-size: 30rpx;
+  text-align: center;
+  padding: 10rpx 0 20rpx;
+}
+
+.risk .risk-bd {
+  color: #999;
+  font-size: 26rpx;
+}
+
+/*拨打电话*/
+.call-phone {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 90rpx;
+  z-index: 20;
+}
+.call-phone .call-btn {
+  width: 100%;
+  height: 90rpx;
+  line-height: 90rpx;
+  text-align: center;
+  background: #c8a063;
+  color: #fff;
+  font-size: 30rpx;
+}
+.call-phone .over {
+  width: 100%;
+  height: 90rpx;
+  line-height: 90rpx;
+  text-align: center;
+  background: #dbdbdb;
+  color: #999;
+  font-size: 30rpx;
+}
+
+.item .title {
+  color: #666;
+  font-size: 28rpx;
+  text-align: left;
+}
+
+.item .title .line {
+  display: inline-block;
+  width: 4rpx;
+  height: 26rpx;
+  background: #c9a063;
+  margin-right: 20rpx;
+}
+
+.item .cont {
+  font-size: 28rpx;
+  text-align: left;
+  color: #333;
+  padding: 20rpx 0 36rpx 24rpx;
+}
+
+.mtb20 {
+  margin-bottom: 20rpx;
+}
+
+.times .item {
+  width: 50%;
+  float: left;
+}
+
+.banner {
+  width: 100%;
+  height: 250rpx;
+  margin: 10rpx 0 20rpx;
+}
+
+.source {
+  color: #999;
+  font-size: 26rpx;
+  padding: 28rpx 0;
+}
+
+.source .time {
+    margin-left: 20rpx;
+}
+
+.sign-succ {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+  }
+  
+.sign-succ .succ {
+    width: 310rpx;
+    height: 310rpx;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #c8a063;
+    font-size: 36rpx;
+
+  }
+  
+.sign-succ .succ .icon {
+    width: 118rpx;
+    height: 118rpx;
+    margin-bottom: 30rpx;
+  }
+
+  .split-line{
+    width: 100%;
+    height: 1rpx;
+    background: #f0f0f0;
+    margin-bottom: 50rpx;
+  }
+
+  .act-title {
+    font-size: 30rpx;
+    text-align: left;
+    color: #333;
+    padding-bottom: 36rpx;
+  }
+
+ /* 新建新版鑫茂财讯样式文件，引入 */
+  @import "xinmao.wxss";

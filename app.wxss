@@ -1,0 +1,254 @@
+/*********************************************************************
+作者：吕彬
+Q  Q：286504720
+手机：15145090813（微信同号）
+app.wxss 公共样式
+*********************************************************************/
+
+view {
+    font-family: "HelveticaNeue-Regular", "Hiragino Sans GB", "微软雅黑", "microsoft yahei", Arial, Helvetica, Arial, sans-serif;
+}
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.clearfix {
+    overflow: hidden;
+    _zoom: 1;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+button::after {
+    border: none;
+}
+
+button {
+    background-color: rgba(0, 0, 0, 0);
+    padding: 0;
+    margin: 0;
+    overflow: inherit;
+}
+
+img {
+    vertical-align: middle;
+}
+
+.container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0rpx 0;
+    box-sizing: border-box;
+}
+
+.logo {
+    //background: url(https://xm-file.oss-cn-beijing.aliyuncs.com/cf/img/logo@3x.png) no-repeat;
+    background: url(https://xm-file.oss-cn-beijing.aliyuncs.com/cf/logo@3x-2.png) no-repeat;
+    background-size: 100% 100%;
+    width: 508rpx;
+    height: 80rpx;
+    margin: 178rpx auto 100rpx;
+}
+
+
+/* 表单 */
+
+.form-box {
+    width: 692rpx;
+}
+
+.form-col {
+    width: 692rpx;
+    padding-top: 86rpx;
+    position: relative;
+    border-bottom: 1px solid #dbdbdb;
+    overflow: hidden;
+    /* 在小程序的原生组件的父元素里 使用overflow是无法遮挡住 原生组件的 */
+}
+
+.form-tip {
+    font-size: 24rpx;
+    height: 30rpx;
+    line-height: 30rpx;
+    color: #666;
+    position: absolute;
+    top: 56rpx;
+    left: 0;
+}
+
+.form-input {
+    font-size: 32rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    color: #333;
+    width:80%;
+}
+
+.form-input-clear {
+    position: absolute;
+    right: 0;
+    bottom: 15rpx;
+    background: url(https://xm-file.oss-cn-beijing.aliyuncs.com/cf/img/empty.png) no-repeat center bottom;
+    background-size: 50% 50%;
+    width: 56rpx;
+    height: 56rpx;
+    z-index: 9;
+}
+
+.is-eye {
+    right: 60rpx;
+}
+
+.form-input-eye {
+    position: absolute;
+    bottom: 15rpx;
+    right: 0;
+    width: 40rpx;
+    height: 50rpx;
+    background: url(https://xm-file.oss-cn-beijing.aliyuncs.com/cf/img/eye_off.png) no-repeat center bottom;
+    background-size: 100% 50%;
+    z-index: 9;
+}
+.form-input-eye-open {
+    position: absolute;
+    bottom: 15rpx;
+    right: 0;
+    width: 40rpx;
+    height: 50rpx;
+    background: url(https://xm-file.oss-cn-beijing.aliyuncs.com/cf/img/eye_on.png) no-repeat center 25rpx;
+    background-size: 100% 50%;
+    z-index: 9;
+}
+
+.form-button {
+    margin-top: 100rpx;
+}
+
+.form-button .form-btn {
+    width: 100%;
+    height: 100rpx;
+    color: #fff;
+    font-size: 30rpx;
+    line-height: 100rpx;
+    background: #c8a063;
+}
+
+.form-text {
+    padding-top: 30rpx;
+    font-size: 30rpx;
+    line-height: 30rpx;
+}
+
+.form-text .link {
+    color: #c8a063;
+    font-size: 30rpx;
+    line-height: 30rpx;
+}
+
+
+/* 暂无数据 */
+
+.no-data {
+    clear: both;
+    width: 100%;
+    padding-top: 100rpx;
+    text-align: center;
+}
+
+.no-data .no-data-img {
+    margin: 0 auto;
+    width: 248rpx;
+    height: 188rpx;
+}
+
+.no-data .no-data-text {
+    font-size: 30rpx;
+    color: #999;
+}
+
+
+/* 浮动按钮 */
+
+.fixed-tool {
+    position: fixed;
+    bottom: 220rpx;
+    right: 30rpx;
+    width: 70rpx;
+    padding:0 5rpx;
+}
+.fixed-tool .managerTip{
+  position: absolute;
+  top: 30rpx;
+  right: 78rpx;
+  width: 196rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  color: #fff;
+  font-size: 24rpx;
+  background: url(http://xm-file.oss-cn-beijing.aliyuncs.com/wchat/manager-tip.png) no-repeat;
+  background-size: 100% 100%;
+  text-indent:20rpx;
+}
+
+.icon-tool {
+    width: 70rpx;
+    height: 70rpx;
+    margin: 20rpx 0;
+    border-radius: 70rpx;
+    box-shadow: 0rpx 0rpx 5rpx rgba(0, 0, 0, 0.4);
+}
+
+.icon-manager {
+    background: url(http://xm-file.oss-cn-beijing.aliyuncs.com/wchat/icon-invert.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.icon-manager-cur {
+  position: relative;
+  background: url(http://xm-file.oss-cn-beijing.aliyuncs.com/wchat/icon-invert-cur.png) no-repeat;
+  background-size: 100% 100%;
+}
+
+.icon-share {
+    background: url(http://xm-file.oss-cn-beijing.aliyuncs.com/wchat/icon-share.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.icon-share-cur {
+    background: url(http://xm-file.oss-cn-beijing.aliyuncs.com/wchat/icon-share-cur.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.icon-top {
+    background: url(http://xm-file.oss-cn-beijing.aliyuncs.com/wchat/icon-top.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.icon-top-cur {
+    background: url(http://xm-file.oss-cn-beijing.aliyuncs.com/wchat/icon-top-cur.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+/* 加载全部列表 */
+.over-end {
+    margin: 30rpx 0;
+    padding: 20rpx 0;
+    text-align: center;
+    font-size: 30rpx;
+    color: #999;
+    position: relatvie;
+}

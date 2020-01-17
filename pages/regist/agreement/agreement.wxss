@@ -1,0 +1,41 @@
+.agreement .content{
+  padding: 27rpx 50rpx;
+}
+.agreement .content text{
+  width: 100%;
+  font-size: 24rpx;
+  color: #666;
+  background: #fff;
+  line-height: 48rpx;
+  text-align: justify;
+}
+.agreement .content .h3{
+  font-size:28rpx;
+  color:#333333;
+  line-height:48rpx;
+  margin:34rpx 0;
+  font-weight:400;
+  text-align:center;
+  display:block;
+}
+.agreement .content .strong{
+  font-size: 28rpx;
+  color: #333333;
+  line-height: 48rpx;
+  margin: 12rpx 0;
+  text-align: left;
+  font-weight: 700;
+  display:block;
+}
+.agreement .content .button{
+  width: 690rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  font-size: 32rpx;
+  border: none;
+  outline: 0;
+  background: #f7b657;
+  color: #fff;
+  margin: 56rpx 3rpx 0;
+  border-radius: 0;
+}

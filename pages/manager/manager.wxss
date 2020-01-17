@@ -1,0 +1,109 @@
+/*********************************************************************
+作者：吕彬
+Q  Q：286504720
+手机：15145090813（微信同号）
+manager.wxss 预约理财师页面样式
+*********************************************************************/
+
+.manager {
+    background: #fff;
+}
+
+.manager-img {
+    width: 100%;
+}
+
+.manager-img .img {
+    width: 100%;
+    height: 416rpx;
+}
+
+.manager-form {
+    margin: 50rpx auto;
+    width: 600rpx;
+}
+
+.manager-form-col {
+    border: 1rpx solid #bbb;
+    padding: 0 24rpx;
+    border-radius: 40rpx;
+    margin-top: 40rpx;
+    clear: both;
+    overflow: hidden;
+    position: relative;
+}
+
+.manager-form-col .icon {
+    float: left;
+    width: 40rpx;
+    height: 40rpx;
+    margin: 20rpx 16rpx 0 0;
+}
+
+.manager-form-col .icon-user {
+    background: url(https://xm-file.oss-cn-beijing.aliyuncs.com/file/yy-icon-name.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.manager-form-col .icon-phone {
+    background: url(https://xm-file.oss-cn-beijing.aliyuncs.com/file/yy-icon-phone.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.manager-form-col .icon-code {
+    background: url(https://xm-file.oss-cn-beijing.aliyuncs.com/file/yy-icon-img-code.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.manager-form-col .icon-message {
+    background: url(https://xm-file.oss-cn-beijing.aliyuncs.com/file/yy-icon-txt-code.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.manager-form-col .form-input {
+    width: 480rpx;
+    height: 70rpx;
+    margin: 5rpx 0;
+    font-size: 26rpx;
+    line-height: 70rpx;
+    color: #333;
+    border: 0;
+    float: left;
+}
+
+.manager-form .button {
+    margin: 70rpx auto;
+    width: 600rpx;
+    text-align: center;
+    background: #c8a063;
+    height: 80rpx;
+    border-radius: 40rpx;
+}
+
+.manager-form .btn {
+    color: #fff;
+    font-size: 30rpx;
+    line-height: 80rpx;
+    text-align: center;
+    width: 100%;
+}
+
+.manager-form-col .code {
+    position: absolute;
+    top: 20rpx;
+    right: 24rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+    padding: 0 8rpx;
+    z-index: 9;
+}
+
+.manager-form-col .get-txt-code {
+    color: #c8a063;
+    font-size: 24rpx;
+}
+
+.manager-form-col .code-img {
+    width: 120rpx;
+    height: 40rpx;
+}

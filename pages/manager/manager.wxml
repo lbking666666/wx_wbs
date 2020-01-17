@@ -1,0 +1,32 @@
+<!--预约理财师页面-->
+<view class="manager">
+    <view class="manager-img">
+        <image src="https://xm-file.oss-cn-beijing.aliyuncs.com/file/yy-img-2.jpg" class="img"></image>
+    </view>
+    <view class="manager-form">
+        <view class="manager-form-col">
+            <view class="icon icon-user"></view>
+            <input class="form-input" value="{{userTxt}}" bindinput="inputUser" placeholder="请输入您的姓名" placeholderStyle="color:#999" type="text"></input>
+        </view>
+        <view class="manager-form-col">
+            <view class="icon icon-phone"></view>
+            <input class="form-input" maxlength="11" bindinput="inputPhone" value="{{phoneTxt}}" placeholder="请输入您的手机号" placeholderStyle="color:#999" type="number"></input>
+        </view>
+        <view class="manager-form-col">
+            <view class="icon icon-code"></view>
+            <input class="form-input" maxlength="6" bindinput="inputCode" value="{{codeTxt}}" placeholder="请输入图形验证码" placeholderStyle="color:#999" type="text"></input>
+            <view class="get-img-code code">
+                <image class="code-img" bindtap="refreshCaptcha" src="{{imgUrl}}"></image>
+            </view>
+        </view>
+        <view class="manager-form-col">
+            <view class="icon icon-message"></view>
+            <input class="form-input" maxlength="6" bindinput="inputMessage" value="{{messageTxt}}" placeholder="请输入验证码" placeholderStyle="color:#999" type="number"></input>
+            <view class="get-txt-code code" wx:if="{{!sendCode}}" bindtap="getCode">获取验证码</view>
+            <view class="get-txt-code code" wx:if="{{sendCode}}">{{seconds}}s</view>
+        </view>
+        <view class="button">
+            <button class="btn" bindtap="sendData">立即预约</button>
+        </view>
+    </view>
+</view>

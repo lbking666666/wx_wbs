@@ -1,0 +1,171 @@
+/* pages/me/list/list.wxss */
+page{
+  background: rgba(240,240,240,1);
+}
+.list{
+  background:url(http://xm-file.oss-cn-beijing.aliyuncs.com/wchat/home-bg.png) no-repeat;
+  background-size:100% auto;
+  width:100%;
+}
+.list .list-up{
+  padding-top: 40rpx;
+}
+.list .list-up .info-card{
+  margin: 0 30rpx;
+  height: 340rpx;
+  width: 630rpx;
+  border-radius: 20rpx;
+  overflow: hidden;
+  box-shadow: 0 5rpx 12rpx rgba(0, 0, 0, 0.2);
+  background: url(http://xm-file.oss-cn-beijing.aliyuncs.com/mywealth-up.png) no-repeat;
+  background-size: 100% 100%;
+  color: #333;
+  padding: 58rpx 30rpx 0 30rpx;
+}
+.list .up .title-p{
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 64rpx;
+}
+.list .up .info-p1{
+  height: 40rpx;
+  line-height: 40rpx;
+  color: #999;
+  font-size: 28rpx;
+}
+.list .down{
+  width: 100%;
+  margin-top: 44rpx;
+}
+.list .down .lf,
+.list .down .rt{
+  float: left;
+}
+.list .down .num-p{
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 36rpx;
+  position: relative;
+  padding-left: 20rpx;
+}
+.list .down .num-p i{
+  position: absolute;
+  display: block;
+  top: 12rpx;
+  left: 0rpx;
+  width: 6rpx;
+  height: 26rpx;
+  background: #c9a063;
+}
+.list .down .info-p{
+  margin-top: 4rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 28rpx;
+  padding-left: 20rpx;
+  color: #999;
+}
+.list .down .lf{
+  width: 315rpx;
+}
+
+.list .list-up .tab-menu{
+  margin-top: 50rpx;
+  width: 100%;
+  height: 90rpx;
+  background: #fff;
+  overflow: hidden;
+}
+.list .list-up .tab-menu .item {
+  position: relative;
+  float: left;
+  width: 50%;
+  height: 90rpx;
+  color: rgba(153,153,153,1);
+  font-size: 30rpx;
+  line-height: 90rpx;
+  text-align: center;
+}
+.list-up .tab-menu .item.active {
+  color: #c9a063;
+  background: #fff;
+}
+.tab-menu .item.active .line {
+  display: inline-block;
+  width: 78rpx;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left: -39rpx;
+  border-bottom: 4rpx solid #c9a063;
+}
+.list-down .wrapper{
+  width: 100%;
+  background: #fff;
+  overflow: hidden;
+  margin-top: 20rpx;
+}
+.list-down .wrapper::first-child{
+  margin-top: 0;
+}
+.list-down .wrapper .border {
+  width: 690rpx;
+  padding: 28rpx 30rpx;
+  border-bottom: 1px solid #e7e7e7;
+}
+.list-down .wrapper .li{
+  font-size: 28rpx;
+  color: #999;
+  height: 68rpx;
+  line-height: 68rpx;
+}
+.list-down .wrapper .li .num{
+  float: right;
+  color: rgba(102,102,102,1);
+}
+.list-down .wrapper .li .brown-font{
+  color: rgba(201,160,99,1);
+}
+.list-down .wrapper .arrow {
+  float: right;
+  width: 16rpx;
+  height: 28rpx;
+  margin-top: 36rpx;
+  background: url("//xm-file.oss-cn-beijing.aliyuncs.com/cf/images-find/small-arrow.png") no-repeat;
+  background-size: 100%;
+}
+.list-down .wrapper .li-border{
+  width: 690rpx;
+  border-bottom: 1rpx solid #e7e7e7;
+  font-size: 32rpx;
+  color: #333333;
+  height: 100rpx;
+  line-height: 100rpx;
+  padding: 0 30rpx;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.list-down .wrapper .no-border{
+  color: rgba(104,104,104,1);
+  font-size: 28rpx;
+}
+.list-down .div-nodata{
+  width: 100%;
+  padding-top: 100rpx;
+  font-size: 30rpx;
+  color: #999;
+  line-height: 80rpx;
+  text-align: center;
+}
+.list-down .div-nodata .img-box{
+  display:flex;
+  justify-content:center;
+}
+.list-down .div-nodata .img-nodata{
+  display: inline-block;
+  width: 248rpx;
+  height: 188rpx;
+}
+          

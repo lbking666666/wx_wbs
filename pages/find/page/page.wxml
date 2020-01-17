@@ -1,0 +1,284 @@
+<!--详情页面-->
+<!-- 引入富文本反编译  -->
+<import src="../../../wxParse/wxParse.wxml" />
+<!-- 引入wxs文件 tag分割 -->
+<wxs module="filter" src="../../../utils/util.wxs"></wxs>
+<view class="page">
+    <!-- 活动 -->
+    <view class="article" wx:if="{{type == '1'}}">
+        <!-- 标题 -->
+        <view class="title">{{contentData.actTitle}}</view>
+        <!-- <view class="date">发布时间：{{contentData.updateTime}} </view> -->
+        <view class="article-active">
+         
+            <view class="source">
+                鑫茂荣信财富
+                <text class="time">{{contentData.pubDate}}</text>
+            </view>
+
+            <image class="banner" src="{{contentData.pictureUrl}}"></image>
+
+            <!-- 简介 -->
+            <!-- <view class="active-about">
+                {{contentData.summary}}
+            </view> -->
+            <view class="active-detail">
+
+              <view class="times">
+                <view class="item">
+                  <view class="title">
+                    <text class="line"></text>开始时间
+                  </view>
+                  <view class="cont">{{filter.date(contentData.startTime)}}</view>
+                </view>
+                <view class="item">
+                  <view class="title">
+                    <text class="line"></text>结束时间
+                  </view>
+                  <view class="cont">{{filter.date(contentData.endTime)}}</view>
+                </view>
+              </view>
+
+              <view wx:if="{{contentData.enrollStartTime}}" class="item">
+                <view class="title">
+                  <text class="line"></text>报名时间
+                </view>
+                <view class="cont">{{filter.date(contentData.enrollStartTime) + ' ~ ' + filter.date(contentData.enrollEndTime)}}</view>
+              </view>
+              <view class="item">
+                <view class="title">
+                  <text class="line"></text>参与人数
+                </view>
+                <view class="cont">{{!contentData.peopleNum ? '人数不限':contentData.peopleNum}}</view>
+              </view>
+              <view class="item mtb20">
+                <view class="title">
+                  <text class="line"></text>活动地点：
+                </view>
+                <view class="cont">{{contentData.address}}</view>
+              </view>
+
+                <!-- <view class="detail-col">
+                    <view class="lable">开始时间：</view>
+                    <text class="value">{{filter.date(contentData.startTime)}}</text>
+                </view>
+                <view class="detail-col">
+                    <view class="lable">结束时间：</view>
+                    <text class="value">{{filter.date(contentData.endTime)}}</text>
+                </view>
+                <view class="detail-col">
+                    <view class="lable">活动地点：</view>
+                    <text class="value">{{contentData.address}}</text>
+                </view>
+                <view class="detail-col">
+                    <view class="lable">活动人数：</view>
+                    <text class="value">{{contentData.peopleNum || ''}}</text>
+                </view> -->
+
+
+            </view>
+        </view>
+        <view class="split-line"></view>
+        <view class="act-title">活动介绍</view>
+        <!-- 活动内容 -->
+        <view class="content-warp">
+            <template is="wxParse" data="{{wxParseData:activeContent.nodes}}" />
+        </view>
+        <view class="call-phone" wx:if="{{!contentData.yes && contentData.registrationStatus == 0}}">
+            <button class="call-btn" bindtap="setAppointment">立即报名</button>
+        </view>
+        <view class="call-phone" wx:if="{{contentData.yes}}">
+            <button class="over">已报名</button>
+        </view>
+        <view class="call-phone " wx:if="{{contentData.registrationStatus == 2}}">
+            <view class="over">报名已结束</view>
+        </view>
+    </view>
+    <!-- 发现 -->
+    <view class="article article-news {{msgVersion != null && msgVersion != 1 ? 'xinmao-news' : ''}}" wx:if="{{type =='2'}}">
+        <!-- 标题 -->
+        <view class="title">{{contentData.title}}</view>
+        <view class="date">发布时间：{{contentData.releaseTime}} </view>
+        <!-- 音频 -->
+        <view class="music-box" hidden="{{!contentData.musicUrl}}">
+            <view class="music-border">
+                 <view class="music-button">
+                    <button class="icon-btn" bindtap="play" hover-class="icon-btn-cur">
+                        <view class="icon-play" hidden="{{audioStatus}}"></view>
+                        <view class="icon-pause" hidden="{{!audioStatus}}"></view>
+                    </button>
+                    <image class="music-img" src="//xm-file.oss-cn-beijing.aliyuncs.com/find-music.jpg?{{time}}"></image>
+                </view>
+                <view class="music-con">
+                    <view class="music-title">{{contentData.musicfileName}}</view>
+                    <view class="music-controls">
+                        <slider disabled bindchange="slideBar" bindchanging="process" class="process" block-size="12" value="{{curTimeVal}}"max="{{duration}}" backgroundColor="#cdcdcd" value="{{curTimeVal}}"max="{{duration}}"/>
+                        <view class="music-time">
+                        {{startTime}} / {{totalTime}}
+                        </view>
+                    </view>
+                </view>
+            </view> 
+           <!--  <audio class="music" width="100%" poster="//xm-file.oss-cn-beijing.aliyuncs.com/find-music.jpg?{{time}}" name="{{contentData.musicfileName}}" author=" " action="{{audioAction}}" bindtap="audioPlayed" src="{{contentData.musicUrl}}"  controls></audio> -->
+        </view>
+        <!-- 视频 -->
+        <view class="video-box" hidden="{{!contentData.videoUrl}}">
+            <!-- <image bindtap='openVideo' hidden="{{videoState !== 0}}" src='//xm-file.oss-cn-beijing.aliyuncs.com/find-video.jpg?{{time}}' style='width: 100%; height:225px;'></image> -->
+            <video controls='true' src="{{contentData.videoUrl}}" class="video" id="myVideo">
+              <cover-view style='width: 100%; height:225px;' bindtap='openVideo' hidden="{{videoState !== 0}}">
+                <cover-image src='http://xm-file.oss-cn-beijing.aliyuncs.com/wchat/wxchet-relacepic.jpg?{{time}}'></cover-image>
+                <cover-image class='video-player-btn' src='http://xm-file.oss-cn-beijing.aliyuncs.com/wchat/video-player-btn.png'></cover-image>
+              </cover-view>
+            </video>
+        </view>
+        <!-- 咨询内容 -->
+        <view class="content-warp">
+            <!-- msgVersion  null:不是顾问云（富文本）；1:以前的顾问云（富文本）；2:新的顾问云鑫茂财讯（自设样式） -->
+            <template is="wxParse" data="{{wxParseData:newsContent.nodes}}" wx:if="{{msgVersion == null || msgVersion == 1}}" />
+            <view wx:else class="msg-XM">
+                <!-- 日历部分 -->
+                <view class="msg-banner">
+                    <view class="banner-img-box">
+                        <image class="banner-img" src="{{msgData.calendarSmall}}"></image>
+                    </view>
+                    <view class="banner-content">
+                        <view class="doct"></view>
+                        <view class="content-lf">
+                            <view class="month-line">{{calendarData.monthStr}}</view>
+                            <view class="day-line">
+                                <span class="day-font">{{calendarData.dayStr}}</span>日
+                            </view>
+                            <view class="week-line">{{calendarData.weekStr}}</view>
+                        </view>
+                        <view class="content-rt">
+                            <view class="rt-title"><i class="double-quotes-icon"></i>{{msgData.calendarTitle}}</view>
+                            <view class="rt-content">{{msgData.calendarContent}}</view>
+                        </view>
+                    </view>
+                </view>
+                <view class="panel_list" data-idx="{{index}}" wx:for="{{msgData.uris}}" wx:key="*this" wx:if="{{item.items!==null && item.items.length>0}}">
+                    <!-- title -->
+                    <view class="top_name_div">
+                        <view class="top_name_con">
+                            <view class="top_name_icon"></view>
+                            <view class="top_name_about">{{item.title}}</view>
+                        </view>
+                    </view>
+                    <!-- 要闻概览-->
+                    <view class="msg-content overview-content" wx:if="{{item.type == 'OVERVIEW'}}">
+                        <view class="overview-list" data-idx="{{index}}" wx:for="{{item.items}}" wx:key="*this">
+                            <view class="list_ite_left">
+                                <view class="point"></view>
+                            </view>
+                            <view class="list_ite_right">{{item.title}}</view>
+                        </view>
+                    </view>
+                    <!-- 财经头条 -->
+                    <view class="msg-content" wx:elif="{{item.type == 'FINANCE'}}">
+                        <view class="finance-list" data-idx="{{index}}" wx:for="{{item.items}}" wx:key="*this">
+                            <view class="item-name-con" >{{item.title}}</view>
+                            <view class="item-about-con" >
+                                <view>{{filter.changeBr(item.content, 0)}}</view>
+                                <view>{{filter.changeBr(item.content, 1)}}</view>
+                            </view>
+                            <view class="item-comment-div-out" data-idx="{{index}}" wx:for="{{item.comments}}" wx:key="*this">
+                                {{item.comment}}
+                            </view>
+                        </view>
+                    </view>
+                    <!-- 其他 -->
+                    <view class="msg-content" wx:else>
+                        <view class="other-list" data-idx="{{index}}" wx:for="{{item.items}}" wx:key="*this">
+                            <view class="con-title">
+                                <image src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAUCAYAAACJfM0wAAAAAXNSR0IArs4c6QAAAmBJREFUOBGtlctLVHEUxz+/EXKsCSfMR1RUi6IhNJyiNhHtehBtAsNCSUtIJVy1n7+gRVktyhTLXlSEINE2gghrpFSE2hTmoxFLGZ+Rc/ude/1179WmUfLAzPmex+97D+ee87uKdBKzVhWvp0alqBqdZuePaXKUzl2Xw1TeanpTFk3d32kmpn79jUJyF0lJo1U7kuTyUJLgoqDHsSmXyXCQ2p4GdcfjtqGf+JGVFU3wLD7I8YWJ/7KjG2mL11GBUpbJCxggujRB+3JJ5Vx8gDPR67QKNvKn4t1XrYvvh7hiAqKVjl7YB1V7IJIPUk7PN7jZCc3vvJkOjhRS3tegHojlEMesYFE2Y8NJsk267h9tZXBwq/H49YtPUPkYEhOuf3MuE/3bCFOm5uxWFOdR6yUNaO/9U+lJherwdmg56ZIK6h8nFBnitGCnxxZVYhip3w8HthgrvT66Q1cd9cezszgvHpt4ZBL9fFfO7XVxJlSt+++VsWlKxA5gWWp0yu2tvDB5UUuVXQX+zLEZQuJxWuGPrYgVkKHWKzpr2Cw9U30jxsqsexP+HL2J9pzYFeevQQ+PK01vXZwJ3V4wz+EcPsgZpxVKXyYeufYGXn3xONLA5x+hNe4Pzs5xSzw2cfcoN4rWuu1IpaD8Ibz87D/ktWRBzj7xekAWpG8D98TrVBxTM4UhLnnTvo7DIf3sunboHICJn5DUv9f9UP0UjrT4t07OhoLUyNYJdlZakJbSRquja5BjjrW8f33D3Y3Xqwpzyql43uoq4IRO6DDBper5a7PSm++r2ARW/qI3zKL/89P0Gx3jutnF+g5PAAAAAElFTkSuQmCC" class="item-name-icon"></image>
+                                {{item.title}}
+                            </view>
+                            <view class="con-body">
+                                <view>{{filter.changeBr(item.content, 0)}}</view>
+                                <view>{{filter.changeBr(item.content, 1)}}</view>
+                            </view>
+                            <view class="con-line">
+                                <view class="line"></view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="content-pdf" wx:if="{{contentData.pdfUrl}}" data-url="{{contentData.pdfUrl}}" bindtap="toPdf" >
+            <view class="icon-pdf"></view>
+            <view class="pdf-name">{{contentData.fileName}}</view>
+            <view class="pdf-link">浏览</view>
+        </view>
+    </view>
+    <!-- type=='3' 海外置业 || type=='4' 海外留学 -->
+    <view class="article-box" wx:if="{{type=='3' || type=='4'}}">
+        <!-- 背景图片 -->
+        <view class="article-hd" style="background: url({{contentData.smallPic}}) no-repeat; background-size: 100% 100%;">
+            <!-- 项目名称 -->
+            <view class="title">
+                {{contentData.name}}
+            </view>
+            <view class="text">
+                <!-- 申请范围,所在位置 -->
+                <view class="adress txt">{{contentData.overseasLable}}</view>
+                <!-- 项目期限,服务课时,产权-->
+                <view class="tag txt">{{contentData.term}}</view>
+            </view>
+        </view>
+        <view class="article-bd">
+            <view class="article-tab-hd">
+                <view class="item {{currentTab==index ? 'active' : ''}}" data-idx="{{index}}" wx:for="{{tab}}" wx:key="*this" bindtap="toTab">
+                    {{item}}
+                </view>
+                <view class="line cur-{{currentTab}}"></view>
+            </view>
+            <!-- 产品内容 -->
+            <view class="article-tab-bd" wx:if="{{currentTab == 0}}">
+                <template is="wxParse" data="{{wxParseData:productContent.nodes}}" />
+                <view class="risk">
+                    <view class="risk-hd">风险提示</view>
+                    <view class="risk-bd">
+                        <template is="wxParse" data="{{wxParseData:riskContent.nodes}}" />
+                    </view>
+                </view>
+            </view>
+            <view class="article-tab-bd" wx:if="{{currentTab == 1}}">
+                <view class="col-title">资料</view>
+                <view class="col-list" data-url="{{item.url}}" wx:for="{{pdfData}}" wx:key="{{item.id}}" bindtap="pdfOpen">
+                    <view class="icon icon-pdf"></view>
+                    <view class="col-list-txt">{{item.fileName}}</view>
+                </view>
+                <!-- 暂无数据 -->
+                <view class="no-data" wx:if="{{pdfData.length == 0}}">
+                    <image class="no-data-img" src="https://xm-file.oss-cn-beijing.aliyuncs.com/cf/list-no-data.png"></image>
+                    <view class="no-data-text">暂无数据</view>
+                </view>
+                <view class="col-title pt-30" wx:if="{{videoData.length>0}}">视频</view>
+                <view class="video-list" data-url="{{item.url}}" wx:for="{{videoData}}" wx:key="{{item.id}}" bindtap="playVideo">
+                    <view class="video-box">
+                        <view class="icon play"></view>
+                        <image class="img" src="{{item.videoImgUrl}}"></image>
+                    </view>
+                    <view class="video-list-txt">{{item.fileName}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="call-phone">
+            <button class="call-btn" bindtap="callPhone">电话咨询</button>
+        </view>
+    </view>
+</view>
+<!--浮动按钮-->
+<view class="fixed-tool">
+    <navigator wx:if="{{!bindManager}}" url="/pages/manager/manager" class="icon-tool icon-manager" hover-class="icon-manager-cur"></navigator>
+    <navigator url="/pages/share/share" class="icon-tool icon-share" hover-class="icon-share-cur"></navigator>
+    <view wx:if="{{returnTop}}" bindtap="returnToTop" class="icon-tool icon-top" hover-class="icon-top-cur"></view>
+</view>
+
+<view wx:if="{{signUpSucc}}" class="sign-succ">
+    <view class="succ">
+        <image src="../../../img/i-success.png" class="icon"></image>
+        <text>报名成功</text>
+    </view>
+</view>

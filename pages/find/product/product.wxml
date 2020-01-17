@@ -1,0 +1,63 @@
+<wxs module="filter" src="../../../utils/util.wxs"></wxs>
+<!-- 引入富文本反编译  -->
+<import src="../../../wxParse/wxParse.wxml" />
+<view class="product container">
+    <view class="swiper-section">
+        <swiper class="swiper" previous-margin="0rpx" next-margin="0rpx" current="0" bindchange="getSwiperIndex" >
+            <!-- 循环结构 -->
+            <swiper-item
+                class="banner-col" 
+                data-id="{{item.id}}" 
+                wx:for="{{imgLsit}}" 
+                wx:key="index" 
+                wx:for-index="tabindex" 
+                data-tabindex="{{tabindex + 1}}">
+                <image class="swiper-img" src="{{item}}"></image>
+            </swiper-item>
+        </swiper>
+        <view class="picNum">{{swiperIndex}}/{{imgLsit.length}}</view>
+    </view>
+
+    <view class="top-section">
+        <view class="const-p" wx:if="{{xBean == 0 && integral == 0}}">
+          <view class="mfont">鑫茂客户专享价</view>
+          <view class='mmfont'>(请致电咨询价格)</view>
+        </view>
+        <view class="const-p" wx:else>
+            <view class="bfont">{{xBean}} </view>
+            <view class="sfont">鑫积分</view>
+             / 
+            <view class="bfont">{{integral}} </view>
+            <view class="sfont">积分</view>
+        </view>
+        
+        <view class="title-p">{{title}}</view>
+        <view class="stitle-p">{{stitle}}</view>
+    </view>
+
+    <view class="mid-section">
+        <view class="table-col">
+            <view class="table-title">服务范围</view>
+            <view class="table-content">{{include}}</view>
+        </view>
+        <view class="table-col">
+            <view class="table-title">合作伙伴</view>
+            <view class="table-content">{{panter}}</view>
+        </view>
+    </view>
+
+    <view class="about-files" wx:if="{{pdfUrl !== ''}}" data-url="{{pdfUrl}}" bindtap="openPdf">
+        <view class="about-title">相关资料</view>
+        <view class="file-name">{{fileName}}</view>
+        <view class="right-icon"></view>
+    </view>
+
+    <view class="gift-detail">
+        <view class="gift-title">礼遇详情</view>
+        <view class="detail-content"><template is="wxParse" data="{{wxParseData:newsContent.nodes}}" /></view>
+    </view>
+
+    <view class="btn-section">
+        <view class="btn" bindtap="takeAsk">咨询预约</view>
+    </view>
+</view>

@@ -1,0 +1,399 @@
+<!--发现页面-->
+<!-- 引入wxs文件 tag分割 -->
+<wxs module="filter" src="../../utils/util.wxs"></wxs>
+<view class="find container">
+    <view class="tab">
+        <!-- 顶部tab -->
+        <view class="tab-hd">
+            <view class="tab-hd-item {{currentTab==index ? 'cur' : ''}}" data-idx="{{index}}" wx:for="{{tab}}" wx:key="*this" bindtap="topTab">
+                <text>{{item}}</text>
+            </view>
+            <view class="tab-hd-dot cur-{{currentTab}}"></view>
+        </view>
+        <view class="tab-bd" wx:if="{{currentTab == 0}}">
+            <!--  咨询模块 -->
+            <view class="consult">
+                <view class="consult-tab">
+                    <!-- 咨询tab -->
+                    <view class="consult-tab-hd">
+                        <view class="consult-tab-radius">
+                            <view class="consult-bg {{currentChildTab == 0 ? 'cur':''}}"></view>
+                            <view class="consult-tab-hd-item {{'items-' + index}} {{currentChildTab == index ? 'cur':''}}" data-idx="{{index}}" wx:for="{{consultTab}}" wx:key="*this" bindtap="consultTab">
+                                {{item}}
+                            </view>
+                        </view>
+                    </view>
+                    <!-- 热点聚焦 -->
+                    <view class="consult-tab-bd" wx:if="{{currentChildTab == 0}}">
+                        <view wx:if="{{hotPullDown}}">
+                            <!-- 循环结构 -->
+                            <view 
+                                class="consult-list" 
+                                wx:for="{{hotData}}" 
+                                wx:key="{{item.releaseMonth}}" 
+                            >
+                                <!-- 月份 -->
+                                <view class="consult-list-hd">
+                                        <view class="month"><view class="big">{{item.releaseMonth}}</view>月</view>
+                                        <view class="month-icon">{{item.releaseMonthEng}}</view>
+                                </view>
+                                <view class="consult-list-bd">
+                                    <!-- 循环内容 -->
+                                    <view 
+                                        class="consult-list-col" 
+                                        data-id="{{list.id}}"
+                                        data-type="2" 
+                                        wx:for="{{item.newsVOList}}" 
+                                        wx:for-item="list" 
+                                        wx:key="{{list.id}}"
+                                        bindtap="toPage" 
+                                    >
+                                        <view class="img-box">
+                                              <image class="img" src="{{list.picpath}}"></image>
+                                          </view>
+                                          <view class="con">
+                                            <view class="title">{{list.title}}</view>
+                                            <view class="text">{{list.abstractContent}}</view>
+                                          </view>
+                                    </view>
+                                </view>
+                            </view>
+                            <!-- 循环结束 -->
+                            <view wx:if="{{hotUpData.length>0}}">
+                                <!-- 热点聚焦占位符 -->
+                                <view class="consult-list-col" wx:for="{{hotUpData}}" wx:key="{{hotUpData}}">
+                                    <!--占位图片 -->
+                                    <image style="width:681rpx;height:195rpx;"  src="http://xm-file.oss-cn-beijing.aliyuncs.com/wchat/article-img.png"></image>
+                                </view>
+                            </view>
+                        </view>
+                        <view wx:else>
+                            <!-- 热点聚焦占位符 -->
+                            <view class="consult-list-col">
+                                <!--占位图片 -->
+                                <image style="width:681rpx;height:260rpx;"  src="http://xm-file.oss-cn-beijing.aliyuncs.com/wchat/artcle-hd-img.png"></image>
+                            </view>
+                            <view class="consult-list-col" wx:for="{{[0,1,2]}}" wx:key="{{[0,1,2]}}">
+                                <!--占位图片 -->
+                                <image style="width:681rpx;height:195rpx;"  src="http://xm-file.oss-cn-beijing.aliyuncs.com/wchat/article-img.png"></image>
+                            </view>
+                        </view>
+                        <!-- 暂无数据 -->
+                        <view class="no-data" wx:if="{{hotData.length == 0 && hotPullDown}}">
+                            <image class="no-data-img" src="https://xm-file.oss-cn-beijing.aliyuncs.com/cf/list-no-data.png"></image>
+                            <view class="no-data-text">暂无数据</view>
+                        </view>
+                        <!-- 上拉加载更多 没有更多数据 -->
+                        <view class="over-end" wx:if="{{hotUp ==false && hotData.length != 0}}">已经加载全部数据</view>
+                    </view>
+                    <!-- 财经讲堂 -->
+                    <view class="consult-tab-bd" wx:if="{{currentChildTab == 1}}">
+                        <view wx:if="{{teachPullDown}}">
+                            <!-- 循环结构 -->
+                            <view 
+                                class="consult-list" 
+                                wx:for="{{teachData}}" 
+                                wx:key="{{item.releaseMonth}}" 
+                            >
+                                <!-- 月份 -->
+                                <view class="consult-list-hd">
+                                        <view class="month"><view class="big">{{item.releaseMonth}}</view>月</view>
+                                        <view class="month-icon">{{item.releaseMonthEng}}</view>
+                                </view>
+                                <view class="consult-list-bd">
+                                    <!-- 循环内容 -->
+                                    <view 
+                                        class="consult-list-col" 
+                                        data-id="{{list.id}}"
+                                        data-type="2" 
+                                        wx:for="{{item.newsVOList}}" 
+                                        wx:for-item="list" 
+                                        wx:key="{{list.id}}"
+                                        bindtap="toPage" 
+                                    >
+                                        <view class="img-box">
+                                              <image class="img" src="{{list.picpath}}"></image>
+                                          </view>
+                                          <view class="con">
+                                            <view class="title">{{list.title}}</view>
+                                            <view class="text">{{list.abstractContent}}</view>
+                                          </view>
+                                    </view>
+                                </view>
+                            </view>
+                            <!-- 循环结束 -->
+                            <view wx:if="{{teachData.length>0}}">
+                                <!-- 热点聚焦占位符 -->
+                                <view class="consult-list-col" wx:for="{{teachUpData}}" wx:key="{{teachUpData}}">
+                                    <!--占位图片 -->
+                                    <image style="width:681rpx;height:195rpx;" src="http://xm-file.oss-cn-beijing.aliyuncs.com/wchat/article-img.png"></image>
+                                </view>
+                            </view>
+                        </view>
+                        <view wx:else>
+                            <!-- 热点聚焦占位符 -->
+                            <view class="consult-list-col">
+                                <!--占位图片 -->
+                                <image style="width:681rpx;height:260rpx;" src="http://xm-file.oss-cn-beijing.aliyuncs.com/wchat/artcle-hd-img.png"></image>
+                            </view>
+                            <view class="consult-list-col" wx:for="{{[0,1,2]}}" wx:key="{{[0,1,2]}}">
+                                <!--占位图片 -->
+                                <image style="width:681rpx;height:195rpx;" src="http://xm-file.oss-cn-beijing.aliyuncs.com/wchat/article-img.png"></image>
+                            </view>
+                        </view>
+                        <!-- 暂无数据 -->
+                        <view class="no-data" wx:if="{{teachData.length == 0 && teachPullDown}}">
+                            <image class="no-data-img" src="https://xm-file.oss-cn-beijing.aliyuncs.com/cf/list-no-data.png"></image>
+                            <view class="no-data-text">暂无数据</view>
+                        </view>
+                        <!-- 上拉加载更多 没有更多数据 -->
+                        <view class="over-end" wx:if="{{teachUp ==false && teachData.length != 0}}">已经加载全部数据</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="tab-bd" wx:if="{{currentTab == 1}}">
+            <!--  产品模块 -->
+            <view class="product">
+                <!--  海外置业 -->
+                <view class="product-hd">
+                    <navigator url="/pages/find/list/list?type=1" class="normal" hover-class="cursor">
+                        <view class="title">海外置业</view>
+                        <view class="icon icon-arrow"></view>
+                    </navigator>
+                </view>
+                <view class="product-bd">
+                    <swiper class="swiper" previous-margin="30rpx" next-margin="30rpx" wx:if="{{product1PullDown&&purchaseData.length>0 }}">
+                        <!-- 循环结构 -->
+                        <swiper-item
+                            class="banner-col" 
+                            data-id="{{item.id}}"
+                            data-type="3" 
+                            wx:for="{{purchaseData}}" 
+                            wx:key="{{item.id}}" 
+                            bindtap="toPage"     
+                        >
+                            <view class="banner-box">
+                                <view class="banner-img-box">
+                                 <!-- 图片 --> 
+                                  <image class="banner-img" src="{{item.smallPic}}"></image>
+                                </view>
+                                <view class="banner-hd">
+                                      <!-- 产品标题 --> 
+                                      <view class="title">{{item.name}}</view>
+                                     <!-- 服务课时, 产权 --> 
+                                      <text class="txt">{{item.term}}</text>
+                                </view>
+                                <view class="banner-bd">
+                                    <!-- 申请范围, 所在位置--> 
+                                    <view class="banner-text">{{item.overseasLable}}</view>
+                                    <view class="banner-tag">
+                                        <!-- 产品点评 -->
+                                        <text class="tag" wx:for-item="tags" wx:key="{{filter.tag(item.productLable)}}" wx:for="{{filter.tag(item.productLable)}}">{{tags}}</text>
+                                    </view>
+                                </view>
+                            </view>
+                        </swiper-item> 
+                        <!-- 循环j结束 -->
+                    </swiper>
+                    <swiper class="swiper" wx:else  previous-margin="30rpx"  next-margin="30rpx">
+                      <!--  banner 占位符 -->
+                      <swiper-item class="banner-col" wx:for="{{[0,1,2]}}" wx:key="{{[0,1,2]}}">
+                          <view class="banner-box">
+                              <!--占位图片 -->
+                              <image style="width:670rpx;height:595rpx" src="http://xm-file.oss-cn-beijing.aliyuncs.com/wchat/product-img.png"></image>
+                          </view>
+                      </swiper-item>
+                  </swiper>
+                    <!-- 暂无数据 -->
+                    <!-- <view class="no-data" wx:if="{{purchaseData.length == 0 && product1PullDown}}">
+                        <image class="no-data-img" src="https://xm-file.oss-cn-beijing.aliyuncs.com/cf/list-no-data.png"></image>
+                        <view class="no-data-text">暂无数据</view>
+                    </view> -->
+                </view>
+                <!--  海外留学 -->
+                <view class="product-hd">
+                    <navigator url="/pages/find/list/list?type=2"  class="normal" hover-class="cursor">
+                        <view class="title">海外留学</view>
+                        <view class="icon icon-arrow"></view>
+                    </navigator>
+                </view>
+                <view class="product-bd">
+                    <swiper class="swiper" previous-margin="30rpx" next-margin="30rpx" wx:if="{{product2PullDown &&studyData.length>0}}">
+                        <!-- 循环结构 -->
+                        <swiper-item
+                            class="banner-col" 
+                            data-id="{{item.id}}"
+                            data-type="4" 
+                            wx:for="{{studyData}}" 
+                            wx:key="{{item.id}}" 
+                            bindtap="toPage"     
+                        >
+                            <view class="banner-box">
+                                <view class="banner-img-box">
+                                 <!-- 图片 --> 
+                                  <image class="banner-img" src="{{item.smallPic}}"></image>
+                                </view>
+                                <view class="banner-hd">
+                                      <!-- 产品标题 --> 
+                                      <view class="title">{{item.name}}</view>
+                                     <!-- 服务课时, 产权 --> 
+                                      <text class="txt">{{item.term}}</text>
+                                </view>
+                                <view class="banner-bd">
+                                    <!-- 申请范围, 所在位置--> 
+                                    <view class="banner-text">{{item.overseasLable}}</view>
+                                    <view class="banner-tag">
+                                        <!-- 产品点评 --> 
+                                        <text class="tag" wx:for-item="tags" wx:key="{{filter.tag(item.productLable)}}" wx:for="{{filter.tag(item.productLable)}}">{{tags}}</text>
+                                    </view>
+                                </view>
+                            </view>
+                        </swiper-item>
+                    </swiper>
+                    <swiper class="swiper" wx:else  previous-margin="30rpx"  next-margin="30rpx">
+                      <!--  banner 占位符 -->
+                      <swiper-item class="banner-col" wx:for="{{[0,1,2]}}" wx:key="{{[0,1,2]}}">
+                          <view class="banner-box">
+                              <!--占位图片 -->
+                              <image style="width:670rpx;height:595rpx" src="http://xm-file.oss-cn-beijing.aliyuncs.com/wchat/product-img.png"></image>
+                          </view>
+                      </swiper-item>
+                  </swiper>
+                    <!-- 暂无数据 -->
+                    <!-- <view class="no-data" wx:if="{{studyData.length == 0 && product2PullDown}}">
+                        <image class="no-data-img" src="https://xm-file.oss-cn-beijing.aliyuncs.com/cf/list-no-data.png"></image>
+                        <view class="no-data-text">暂无数据</view>
+                    </view> -->
+                </view>
+            </view>
+        </view>
+        <view class="tab-bd" wx:if="{{currentTab == 2}}">
+          <!--  鑫享会模块 -->
+          <view class="xinxiang">
+            <!--  增值服务 -->
+            <view class="addvalue-hd">
+              <navigator url="/pages/find/list/list?type=3" class="normal" hover-class="cursor">
+                <view class="title">增值服务</view>
+                <view class="icon icon-arrow"></view>
+              </navigator>
+            </view>
+            <view class="addvalue-bd">
+                <scroll-view scroll-x="true" class="scroll-add">
+                    <view class="addvalue-item" 
+                        data-id="{{item.id}}" 
+                        data-type="1" 
+                        wx:for="{{valaddServiceData}}" 
+                        wx:key="{{item.id}}" 
+                        bindtap="toDetail">
+                        <view class="addvalue-banner">
+                            <image class="picimg" src="{{item.picUrl}}" />
+                        </view>
+                        <view class="addvalue-title">
+                            <view class="title-name">{{item.privilegeName}}</view>
+                            <view class="unit" wx:if="{{item.xdIntegral !== null && item.xdIntegral !== ''}}">鑫积分</view>
+                            <view class="number" wx:if="{{item.xdIntegral !== null && item.xdIntegral !== ''}}">{{item.xdIntegral}}</view>
+                        </view>
+                        <view class="addvalue-text">{{item.privilegeReview}}</view>
+                        <view class="able-level">
+                            <view class="level-icon" 
+                                wx:for="{{item.levelStr}}" 
+                                wx:key="{{item.id}}" >
+                                {{item=='鑫享会会员' ? '鑫享会会员' : levelStr[item]}}
+                            </view>
+                        </view>
+                    </view>
+                </scroll-view>
+                
+            </view>
+            <!--  高端专享 -->
+            <view class="product-hd">
+                <navigator url="/pages/find/list/list?type=4"  class="normal" hover-class="cursor">
+                    <view class="title">高端尊享</view>
+                    <view class="icon icon-arrow"></view>
+                </navigator>
+            </view>
+            <view class="vip-bd">
+                <scroll-view scroll-x="true" class="scroll-vip">
+                    <view
+                        class="scroll-item" 
+                        data-id="{{item.id}}" 
+                        data-type="2" 
+                        wx:for="{{exclusiveData}}" 
+                        wx:key="{{item.id}}" 
+                        bindtap="toDetail"     
+                    >
+                        <view class="banner-box">
+                            <image class="picimg" src="{{item.picUrl}}" />
+                        </view>
+                        <text class="item-title">{{item.privilegeName}}</text>
+                    </view> 
+                </scroll-view>
+            </view>
+          </view>
+        </view>
+        <view class="tab-bd" wx:if="{{currentTab == 3}}">
+            <!--  活动模块 -->
+            <view class="active">
+                <view wx:if="{{activePullDown}}">
+                    <!--  循环结构 -->
+                    <view 
+                        class="active-col" 
+                        data-id="{{item.id}}"
+                        data-type="1" 
+                        wx:for="{{activeData}}" 
+                        wx:key="{{item.id}}"
+                        bindtap="toPage"
+                        wx:if="{{item.flag == 0}}"
+                    >   
+                        <!-- 活动状态 -->
+                        <view class="active-status" wx:if="{{item.releaseStatus == 2}}">已结束</view>
+                        <view class="col-img">
+                            <!--  图片路径 -->
+                            <image class="img" src="{{item.pictureUrl}}"></image>
+                        </view>
+                        <view class="col-con">
+                            <!-- 标题 -->
+                            <view class="col-title">
+                                {{item.actTitle}}
+                            </view>
+                            <view class="col-txt">
+                                <!-- 活动开始时间 -->
+                                <view class="date">开始时间：{{item.flag == 1 ? item.meetStartTime : filter.date(item.startTime)}}</view> 
+                                <!-- 地址 -->
+                                <!-- <view class="tag">{{item.address}}</view> --> 
+                                <view class="addr">举办地点：{{item.flag == 1 ? item.meetAddr : item.address}}</view>
+                            </view>
+                        </view>
+                    </view> 
+                    <!-- 循环结束 -->
+                    <view wx:if="{{activeUpData.length>0}}">
+                         <view class="active-col" wx:for="{{activeUpData}}" wx:key="{{activeUpData}}">
+                              <!--占位图片 -->
+                              <image style="width:670rpx;height:595rpx" src="http://xm-file.oss-cn-beijing.aliyuncs.com/wchat/product-img.png"></image>
+                          </view>
+                    </view>
+                </view>
+                <view wx:else>
+                     <view class="active-col" wx:for="{{[0,1,2,3]}}" wx:key="{{[0,1,2,3]}}">
+                          <!--占位图片 -->
+                          <image style="width:670rpx;height:595rpx" src="http://xm-file.oss-cn-beijing.aliyuncs.com/wchat/product-img.png"></image>
+                      </view>
+                </view>
+                <!-- 暂无数据 -->
+                <view class="no-data" wx:if="{{activeData.length == 0 && activePullDown}}">
+                    <image class="no-data-img" src="https://xm-file.oss-cn-beijing.aliyuncs.com/cf/list-no-data.png"></image>
+                    <view class="no-data-text">暂无数据</view>
+                </view>
+                <!-- 上拉加载更多 没有更多数据 -->
+                 <view class="over-end" wx:if="{{activeUp ==false && activeData.length != 0}}">已经加载全部数据</view>
+            </view>
+        </view>
+    </view>
+</view>
+<!--浮动按钮-->
+<view class="fixed-tool">
+    <navigator wx:if="{{!bindManager}}" url="/pages/manager/manager" class="icon-tool icon-manager" hover-class="icon-manager-cur"></navigator>
+    <navigator url="/pages/share/share" class="icon-tool icon-share" hover-class="icon-share-cur"></navigator>
+    <view wx:if="{{returnTop}}" bindtap="returnToTop" class="icon-tool icon-top" hover-class="icon-top-cur"></view>
+</view>

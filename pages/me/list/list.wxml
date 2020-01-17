@@ -1,0 +1,92 @@
+<!-- list page -->
+<view class="list">
+  <view class="list-up">
+    <view class='info-card'>
+      <view wx:if="{{productType == 1}}" class="up"> <!-- 类固定收益 -->
+        <view class="title-p">{{investStr}}</view>
+        <view class="info-p1">在投金额（元）</view>
+      </view>
+      <view wx:else class="up"> <!--  FOF基金 || 私募基金 -->
+        <view class="title-p">{{investStr}}</view>
+        <view class="info-p1">在投金额（万元）</view>
+      </view>
+
+      <view wx:if="{{productType == 1}}" class="down">
+        <view class="lf">
+          <view class="num-p">
+            <i></i>
+            {{waitIncome}}
+          </view>
+          <view class="info-p">待收收益（元）</view>
+        </view>
+        <view class="rt">
+          <view class="num-p">
+            <i></i>
+            {{historyIncome}}
+          </view>
+          <view class="info-p">历史收益（元）</view>
+        </view>
+      </view>
+      <view wx:else class="down">
+        <view class="lf">
+          <view class="num-p">
+            <i></i>
+            {{allInvestStr}}
+          </view>
+          <view class="info-p">累计投资金额（万元）</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="tab-menu">
+      <view class="item {{refundStatus == 0 ? 'active' : ''}}" data-status='0' bindtap='getListByStatus'>
+        投资中
+        <view class="line"></view>
+      </view>
+      <view class="item {{refundStatus == 1 ? 'active' : ''}}" data-status='1' bindtap='getListByStatus'>
+        已回款
+        <view class="line"></view>
+      </view>
+    </view>
+  </view>
+  <view class='list-down'>
+    <view wx:for="{{dataList}}" wx:key="index" class='wrapper'>
+      <view class='li-border'>{{item.productName}}</view>
+
+      <view class='border'>
+        <view class='li'>
+          <text class='p-title'>投资金额：</text>
+          <text class='num brown-font'>{{productType == 1 ? item.signAmount : item.signAmount + '万'}}元</text>
+        </view>
+        <view wx:if="{{productType == 1}}" class='li'>
+          <text class='p-title'>业绩比较基准：</text>
+          <text class='num'>{{item.annualReturn}}%</text>
+        </view>
+        <view wx:if="{{productType == 1}}" class='li'>
+          <text class='p-title'>投资周期：</text>
+          <text class='num'>{{item.valueDate}}-{{item.dusDays}}</text>
+        </view>
+        <view wx:else class='li'>
+          <text class='p-title'>项目期限：</text>
+          <text class='num'>{{item.term}}</text>
+        </view>
+        <view wx:if="{{productType != 1}}" class='li'>
+          <text class='p-title'>认购净值：</text>
+          <text class='num'>{{item.netValue}}</text>
+        </view>
+      </view>
+
+      <view class="li-border no-border" data-id='{{item.id}}' data-ydid='{{item.investId}}' bindtap='toDetailPage'>
+        查看详情<i class="arrow"></i>
+      </view>
+    </view>
+
+    <view wx:if="{{noData}}" class="div-nodata">
+      <view class='img-box'>
+        <image class='img-nodata' src='//xm-file.oss-cn-beijing.aliyuncs.com/cf/list-no-data.png'></image>
+      </view>
+      
+      <view>暂无数据</view>
+    </view>
+  </view>
+</view>

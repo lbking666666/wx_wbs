@@ -1,0 +1,83 @@
+.set-password .content .form-col{
+  border-bottom:1rpx solid #dbdbdb;
+  height: 100rpx;
+  width: 690rpx;
+  padding: 0 30rpx;
+}
+.set-password .content .form-input{
+  position: absolute;
+  bottom: 0;
+  border-bottom:none;
+  width: 450rpx;
+  height: 100rpx;
+  padding-left: 5em;
+  line-height: 100rpx;
+}
+.set-password .content .label{
+  position: absolute;
+  color: #333;
+  font-size: 30rpx;
+  line-height: 100rpx;
+  bottom: 0;
+}
+.set-password .content .form-input-clear{
+  right:30rpx;
+  bottom:33rpx;
+}
+.set-password .content .protocol-box{
+  color: #666;
+  position: relative;
+  padding-left: 73rpx;
+  margin-top: 30rpx;
+  font-size: 30rpx;
+  height:30rpx;
+  line-height:30rpx;
+}
+.content .protocol-box .disagree{
+  display: block;
+  border-radius: 4rpx;
+  overflow: hidden;
+  width: 30rpx;
+  height: 30rpx;
+  position: absolute;
+  top: 0;
+  left: 30rpx;
+  background: url(//xm-file.oss-cn-beijing.aliyuncs.com/cf/check@2x.png) no-repeat;
+  background-size: 100% 100%;
+}
+.content .protocol-box .agree{
+  display: block;
+  border-radius: 4rpx;
+  overflow: hidden;
+  width: 30rpx;
+  height: 30rpx;
+  position: absolute;
+  top: 0;
+  left: 30rpx;
+  background: url(//xm-file.oss-cn-beijing.aliyuncs.com/cf/checked@2x.png) no-repeat;
+  background-size: 100% 100%;
+}
+.set-password .confirmBox{
+  margin: 100rpx 30rpx 0;
+}
+.set-password .confirmBox .fakebtn{
+  display: block;
+  height: 100rpx;
+  width: 690rpx;
+  background: #dbdbdb;
+  text-align: center;
+  line-height: 100rpx;
+  color: #fff;
+}
+.set-password .confirmBox .confirm-btn{
+  display: block;
+  height: 100rpx;
+  width: 690rpx;
+  background: #c8a063;
+  text-align: center;
+  line-height: 100rpx;
+  color: #fff;
+}
+.set-password .protocol{
+  color: #157efb;
+}

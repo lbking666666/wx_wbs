@@ -1,0 +1,28 @@
+<!--设置密码-->
+<view class="container set-password">
+  <div class="content">
+    <view class="form-col">
+      <label for='passwordA' class='label'>登录密码</label>
+      <input id='passwordA' class="form-input" maxlength="18" value="{{passwordA}}" placeholder="6-18位字母加数字组合" placeholderStyle="color:#999" type="password" bindinput="inputPassA"></input>
+      <view class="icon form-input-clear" hidden="{{clearA}}" bindtap="clearPassA"></view>
+    </view>
+
+    <view class="form-col">
+      <label for='passwordB' class='label'>确认密码</label>
+      <input id='passwordB' class="form-input" maxlength="18" value="{{passwordB}}" placeholder="请输入确认密码" placeholderStyle="color:#999" type="password" bindinput="inputPassB"></input>
+      <view class="icon form-input-clear" hidden="{{clearB}}" bindtap="clearPassB"></view>
+    </view>
+
+    <view class="protocol-box">
+      <i wx:if="{{hasAgree}}" class="agree" bindtap="changeAgree"></i>
+      <i wx:else class="disagree" bindtap="changeAgree"></i>
+      我已经阅读并同意
+      <a class="protocol" bindtap="checkAgreement">《服务使用协议》</a>
+    </view>
+    
+    <view class="confirmBox">
+      <div wx:if="{{ableConfirm}}" class="confirm-btn" bindtap="confirmInput">提交</div>
+      <div wx:else class="fakebtn">提交</div>
+    </view>
+  </div>
+</view>

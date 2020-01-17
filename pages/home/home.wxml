@@ -1,0 +1,172 @@
+<!--精选页面-->
+<!-- 引入wxs文件 tag分割 -->
+<wxs module="filter" src="../../utils/util.wxs"></wxs>
+<view class="home">
+    <view class="header">
+      <view class="header-logo"></view>
+      <view class="header-text">专业资产配置服务品牌</view>
+    </view>
+    <view class="banner">
+        <swiper class="swiper" wx:if="{{bannerPullDown && bannerData.length>0}}"  previous-margin="30rpx"  next-margin="30rpx">
+            <!--  循环结构 后台返回条数 -->
+            <swiper-item 
+                class="banner-col"
+                data-id = "{{item.id}}"
+                data-type="{{item.type}}" 
+                data-pagetype="{{item.parentValueType}}"
+                wx:for="{{bannerData}}"
+                wx:key="{{item.id}}"
+                bindtap="toPage"
+            >
+                <view class="banner-box">
+                    <view class="banner-img-box">
+                    <image class="banner-img" src="{{item.pic}}"></image>
+                    </view>
+
+                    <view class="banner-hd" wx:if="{{item.type == 99}}">
+                        <!-- 活动标题/项目标题 -->
+                        <view class="title-t">{{item.title}}</view>
+                    </view>
+                    <view class="banner-hd" wx:else>
+                        <!-- 活动标题/项目标题 -->
+                        <view class="title">{{item.title}}</view>
+                        <!-- 活动图片/项目图片  -->
+                        <text class="txt">{{item.anyT}}</text>
+                    </view>
+
+                    <view class="banner-bd" wx:if="{{item.type == 99}}">
+                        <view class="banner-content">{{item.privilegeReview}}</view>
+                        <view class="level-box">
+                            <view class="levels-tag" wx:for="{{item.levelStr}}" wx:key="{{item}}">{{item=='鑫茂客户' ? '鑫茂客户' : item}}</view>
+                        </view>
+                    </view>
+                    <view class="banner-bd" wx:else>
+                        <!-- 活动内容/项目点评/申请范围  -->
+                        <view class="banner-text" style="margin-top:-18rpx" wx:if="{{item.anyTr == '' || item.anyTr == null || item.anyTr == 'null'}}">{{filter.cutStr(item.anyO, 35)}}</view>
+                        <view class="banner-text" style='margin-top:10rpx' wx:else>{{item.anyO}}</view>
+                        <!-- 项目标签 -->
+                        <view class="banner-tag">
+                            <!-- 使用wxs 分割字符串为数组-->
+                            <text class="tag" wx:for-item="tags" wx:key="{{filter.tag(item.anyTr)}}" wx:for="{{filter.tag(item.anyTr)}}">{{tags}}</text>
+                        </view>
+                    </view>
+                </view>
+            </swiper-item>
+        </swiper>
+        <swiper class="swiper" wx:else  previous-margin="30rpx"  next-margin="30rpx">
+            <!--  banner 占位符 -->
+            <swiper-item class="banner-col" wx:for="{{[0,1,2]}}" wx:key="{{[0,1,2]}}">
+                <view class="banner-box">
+                    <!--占位图片 -->
+                    <image style="width:670rpx;height:595rpx" src="http://xm-file.oss-cn-beijing.aliyuncs.com/wchat/product-img.png"></image>
+                </view>
+            </swiper-item>
+        </swiper>
+    </view>
+    <view class="list-column">
+        <view class="hd" data-id="0" bindtap="tabSwith">
+            <view class="title">鑫茂财讯</view>
+            <view class="icon icon-arrow"></view>
+        </view>
+        <view class="bd" wx:if="{{pullDown&&hotData.length>0}}">
+            <!--  循环结构 2条 -->
+            <view 
+                 class="list-col" 
+                 data-id="{{item.id}}"
+                 data-type="2"
+                 wx:for="{{hotData}}"
+                 wx:key="{{item.id}}"
+                 bindtap="toPage" 
+            >
+              <view class="img-box">
+                  <!-- 图片 -->
+                  <image class="img" src="{{item.picpath}}"></image>
+              </view>
+              <view class="con">
+                <!-- 标题 -->
+                <view class="title">{{item.title}}</view>
+                <!-- 内容 -->
+                <view class="text">{{filter.cutStr(item.abstractContent, 40)}}</view>
+              </view>
+            </view>
+        </view>
+        <view class="bd" wx:else>
+          <!--  热点聚焦 占位符 -->
+            <view class="list-col" wx:for="{{[0,1]}}" wx:key="{{[0,1]}}">
+                <!--占位图片 -->
+                <image style="width:681rpx;height:195rpx;"  src="http://xm-file.oss-cn-beijing.aliyuncs.com/wchat/article-img.png"></image>
+            </view>
+        </view>
+    </view>
+
+    <view class="list-column">
+        <view class="hd" data-id="1" bindtap="tabSwith">
+            <view class="title">财商讲堂</view>
+            <view class="icon icon-arrow"></view>
+        </view>
+        <view class="bd" wx:if="{{pullDown2&&teachData.length>0}}">
+            <!--  循环结构 2条 -->
+            <view 
+                 class="list-col" 
+                 data-id="{{item.id}}" 
+                 data-type="2"
+                 wx:for="{{teachData}}"
+                 wx:key="{{item.id}}"
+                 bindtap="toPage"
+            >
+              <view class="img-box">
+                  <!-- 图片 -->
+                  <image class="img" src="{{item.picpath}}"></image>
+              </view>
+              <view class="con">
+                <!-- 标题 -->
+                <view class="title">{{item.title}}</view>
+                <!-- 内容 -->
+                <view class="text">{{filter.cutStr(item.abstractContent, 40)}}</view>
+              </view>
+            </view>
+        </view>
+        <view class="bd" wx:else>
+          <!--  热点聚焦 占位符 -->
+            <view class="list-col" wx:for="{{[0,1]}}" wx:key="{{[0,1]}}">
+                <!--占位图片 -->
+                <image style="width:681rpx;height:195rpx;"  src="http://xm-file.oss-cn-beijing.aliyuncs.com/wchat/article-img.png"></image>
+            </view>
+        </view>
+    </view>
+
+    <view class="list-column">
+        <view class="hd" data-id="0" data-type="xxh" bindtap="tabSwith">
+            <view class="title">鑫享会</view>
+            <view class="icon icon-arrow"></view>
+        </view>
+        <view class="xxh-box" wx:if="{{pullDown3 && xxhData.length>0}}">
+            <!--  循环结构 2条 -->
+            <view 
+                class="xxh-list" 
+                data-id="{{item.id}}" 
+                data-type="5" 
+                data-pagetype="{{item.parentValueType}}" 
+                wx:for="{{xxhData}}" 
+                wx:key="{{item.id}}" 
+                bindtap="toPage"
+            >
+                <view class="img-box"><image class="xxh-img" src="{{item.picUrl}}"></image></view>
+                <view class="xxh-title">{{item.privilegeName}}</view>
+            </view>
+        </view>
+        <view class="xxh-box" wx:else>
+          <!--  热点聚焦 占位符 -->
+            <view class="list-col" wx:for="{{[0,1]}}" wx:key="{{[0,1]}}">
+                <!--占位图片 -->
+                <image style="width:681rpx;height:195rpx;"  src="http://xm-file.oss-cn-beijing.aliyuncs.com/wchat/article-img.png"></image>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="fixed-tool">
+    <navigator wx:if="{{!bindManager}}" url="/pages/manager/manager" class="icon-tool icon-manager" hover-class="icon-manager-cur">
+      <view class='managerTip' wx:if="{{showManagerTip}}">预约咨询顾问</view>
+    </navigator>
+    <navigator url="/pages/share/share" class="icon-tool icon-share" hover-class="icon-share-cur"></navigator>
+</view>

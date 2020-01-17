@@ -1,0 +1,620 @@
+/*********************************************************************
+作者：吕彬
+Q  Q：286504720
+手机：15145090813（微信同号）
+find.wxss 发现页面样式
+*********************************************************************/
+
+.tab {
+    width: 100%;
+    overflow: hidden;
+}
+
+.tab-hd {
+    background: url(http://xm-file.oss-cn-beijing.aliyuncs.com/wchat/tab-hd.png) no-repeat center center;
+    height: 88rpx;
+    background-size: 100% 100%;
+    text-align: center;
+    width: 100%;
+    /*position: relative;*/
+    position: fixed;
+    z-index: 9;
+}
+
+.tab-hd-dot {
+    position: absolute;
+    width: 20rpx;
+    height: 4rpx;
+    background: #fff;
+    bottom: 18rpx;
+    transition:left 300ms ease-in-out 0ms;
+    transform-origin:50% 50% 0px;
+}
+
+.tab-hd-dot.cur-0 {
+    left: 11%;
+}
+.tab-hd-dot.cur-1 {
+    left: 36%;
+}
+.tab-hd-dot.cur-2 {
+    left: 61%;
+}
+.tab-hd-dot.cur-3 {
+    left: 86%;
+}
+
+.tab-hd-item {
+    display: inline-block;
+    color: #9b899a;
+    line-height: 88rpx;
+    font-size: 28rpx;
+    font-weight: 700;
+    width: 25%;
+}
+
+.tab-hd-item.cur {
+    color: #fff;
+}
+
+.tab-bd {
+    padding-top: 90rpx;
+}
+
+
+
+
+/* 咨询栏目 */
+
+.consult {
+    padding: 30rpx;
+    clear: both;
+    position: relative;
+}
+
+.consult-tab-hd {
+    height: 60rpx;
+    position: fixed;
+    padding: 50rpx 0 20px;
+    background: #fff;
+    width: 100%;
+    left: 0;
+    top: 88rpx;
+    z-index: 9;
+}
+
+.consult-tab-radius {
+    position: relative;
+    border: 1rpx solid #cda87a;
+    border-radius: 30rpx;
+    height: 56rpx;
+    width: 596rpx;
+    margin: 0 auto;
+    padding: 2rpx;
+    overflow: hidden;
+}
+
+.consult-tab-radius .consult-bg{
+    position: absolute;
+    left: 301rpx;
+    top: 2rpx;
+    width: 296rpx;
+    height: 56rpx;
+    border-radius: 28rpx;
+    background: #cda87a;
+    overflow: hidden;
+    z-index: 1;
+    transition:left 300ms ease-in-out 0ms;
+    transform-origin:50% 50% 0px;
+}
+.consult-tab-radius .consult-bg.cur{
+    left: 2rpx;
+    top: 2rpx;
+}
+
+.consult-tab-hd-item {
+    position: absolute;
+    width: 296rpx;
+    height: 56rpx;
+    border-radius: 28rpx;
+    text-align: center;
+    font-size: 28rpx;
+    line-height: 56rpx;
+    color: #cda87a;
+    z-index: 2;
+}
+.consult-tab-hd-item.items-0{
+  left: 2rpx;
+  top: 2rpx;
+}
+.consult-tab-hd-item.items-1{
+  right: 2rpx;
+  top: 2rpx;
+}
+
+.consult-tab-hd-item.cur {
+    z-index: 2;
+    color: #fff;
+}
+
+.consult-tab-bd {
+    padding-top: 130rpx;
+}
+
+.consult-list-hd {
+    height: 70rpx;
+}
+
+.consult-list-hd .month {
+    display: inline-block;
+    color: #000;
+    font-size: 42rpx;
+    line-height: 80rpx;
+    margin-right: 35rpx;
+}
+
+.consult-list-hd .month .big {
+    font-size: 70rpx;
+    display: inline-block;
+}
+
+.month-icon {
+    display: inline-block;
+    font-size: 30rpx;
+    color: #888;
+    line-height: 80rpx;
+}
+
+.consult-list-col {
+    clear: both;
+    overflow: hidden;
+    padding: 50rpx 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.consult-list-col:last-child {
+    border: 0;
+}
+
+.consult-list-col .img-box {
+    float: left;
+    width: 240rpx;
+    height: 195rpx;
+    overflow: hidden;
+    margin-right: 44rpx;
+}
+
+.consult-list-col .img-box .img {
+    width: 240rpx;
+    height: 195rpx;
+}
+
+.consult-list-col .title {
+    font-size: 36rpx;
+    color:#333;
+    font-weight: 600;
+    text-overflow: ellipsis;
+    line-height:45rpx;
+    display:-webkit-box;
+    -webkit-line-clamp:2;
+    overflow:hidden;
+    -webkit-box-orient:vertical;
+    height: 90rpx;
+    margin-bottom:4rpx;
+}
+
+.consult-list-col .text {
+    font-size: 24rpx;
+    color: #888;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+
+
+
+/* 产品栏目 */
+
+.product {
+    clear: both;
+    position: relative;
+    margin-bottom: 30rpx;
+}
+
+.product-hd {
+  line-height:36rpx;
+  padding: 40rpx;
+  clear: both;
+}
+.product-hd:first-child{
+  padding-top: 50rpx;
+}
+.product-hd .normal{
+  background: #fff;
+}
+.product-hd .cursor{
+  background: #fff;
+}
+
+.product-hd .title {
+    font-size: 36rpx;
+    color: #333;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.product-hd .icon-arrow {
+    background: url(http://xm-file.oss-cn-beijing.aliyuncs.com/wchat/icon-arrow.png) no-repeat;
+    background-size: 100% 100%;
+    width: 12rpx;
+    height: 22rpx;
+    display: inline-block;
+    margin: 0 15rpx;
+}
+
+.product-bd,
+.swiper {
+    height: 610rpx;
+    width: 750rpx;
+}
+
+.product-bd .banner-box {
+    border-radius: 30rpx;
+    background: #fff;
+    width: 670rpx;
+    height: 595rpx;
+    overflow: hidden;
+    margin: 0 10rpx;
+    box-shadow: 0 5rpx 15rpx rgba(0, 0, 0, 0.2);
+}
+
+.product-bd .banner-img-box {
+    width: 670rpx;
+    height: 350rpx;
+    overflow: hidden;
+}
+
+.product-bd .banner-img {
+    width: 670rpx;
+    height: 350rpx;
+}
+
+.product-bd .banner-hd {
+    padding: 25rpx 42rpx;
+    line-height: 48rpx;
+    overflow: hidden;
+    clear: both;
+}
+
+.product-bd .banner-hd .title {
+    font-size: 36rpx;
+    float: left;
+    color: #333;
+    font-weight: 600;
+}
+
+.product-bd .banner-hd .txt {
+    color: #cda87a;
+    float: right;
+    font-size: 24rpx;
+}
+
+.product-bd .banner-bd {
+    clear: both;
+    padding: 20rpx 42rpx;
+}
+
+.product-bd .banner-text {
+    color: #888;
+    font-size: 28rpx;
+    line-height: 36rpx;
+}
+
+.product-bd .banner-tag {
+    overflow: hidden;
+    padding-top:16rpx;
+}
+
+.product-bd .banner-tag .tag {
+  vertical-align: top;
+  display: inline-block;
+  text-align: center;
+  font-size: 20rpx;
+  color: #cda87a;
+  background: #f5efe4;
+  border-radius: 4rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  padding: 0 15rpx;
+  margin-right:12rpx;
+}
+
+/* 鑫享会 */
+/* 横向滑动， 去除scrollbar */
+::-webkit-scrollbar{
+    width: 0;
+    height: 0;
+    color: transparent;
+}
+
+.xinxiang{
+  clear: both;
+  position: relative;
+  margin-bottom: 30rpx;
+}
+
+.addvalue-hd {
+  line-height:36rpx;
+  padding: 40rpx;
+  clear: both;
+}
+.addvalue-hd:first-child{
+  padding-top: 50rpx;
+}
+.addvalue-hd .normal{
+  background: #fff;
+}
+.addvalue-hd .cursor{
+  background: #fff;
+}
+
+.addvalue-hd .title {
+  font-size: 36rpx;
+  color: #333;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.addvalue-hd .icon-arrow {
+  background: url(http://xm-file.oss-cn-beijing.aliyuncs.com/wchat/icon-arrow.png) no-repeat;
+  background-size: 100% 100%;
+  width: 12rpx;
+  height: 22rpx;
+  display: inline-block;
+  margin: 0 15rpx;
+}
+
+.addvalue-bd{
+    overflow:hidden;
+    white-space:nowrap;
+    width: 100%;
+    height: 617rpx;
+}
+.addvalue-bd .scroll-add {
+    height: 617rpx;
+    width: 100%;
+}
+.addvalue-bd .scroll-add .addvalue-item{
+    display: inline-block;
+    width: 660rpx;
+    height: 605rpx;
+    overflow: hidden;
+    border-radius: 16rpx;
+    box-shadow: 0 5rpx 12rpx rgba(0, 0, 0, 0.2);
+    margin-left: 20rpx; 
+}
+.addvalue-bd .addvalue-item:first-child{
+    margin-left: 30rpx;
+}
+.addvalue-bd .addvalue-item:last-child{
+    margin-right: 30rpx;
+}
+.addvalue-bd .addvalue-item .addvalue-banner{
+    width: 100%;
+    height: 360rpx;
+}
+.addvalue-bd .addvalue-item .addvalue-banner .picimg{
+    width: 100%;
+    height: 100%;
+}
+.addvalue-bd .addvalue-item .addvalue-title{
+    padding: 35rpx 32rpx 0 32rpx;
+    height: 36rpx;
+    line-height: 36rpx;
+    font-size: 36rpx;
+    color: #333;
+}
+.addvalue-bd .addvalue-item .addvalue-title .title-name{
+    display: inline-block;
+    width: 10em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.addvalue-bd .addvalue-item .addvalue-title .number{
+    float: right;
+    color: #c9a063;
+}
+.addvalue-bd .addvalue-item .addvalue-title .unit{
+    float: right;
+    color: #c9a063;
+    font-size: 28rpx;
+}
+.addvalue-bd .addvalue-item .addvalue-text{
+    padding: 60rpx 32rpx 0 32rpx;
+    font-size: 28rpx;
+    color: #888;
+    line-height: 28rpx; 
+    height: 28rpx;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+.addvalue-bd .addvalue-item .able-level{
+    padding: 20rpx 32rpx 0 32rpx;
+    display:flex;
+}
+.addvalue-bd .addvalue-item .level-icon{
+    display: inline-block;
+    border: 1rpx solid #999;
+    padding: 2rpx 8rpx;
+    margin-right: 8rpx;
+    font-size: 20rpx;
+    color: #999;
+    text-align: center;
+}
+
+
+/* 高端专享 */
+.vip-bd{
+    overflow:hidden;
+    white-space:nowrap;
+    height: 520rpx;
+    width: 750rpx;
+}
+.vip-bd .scroll-vip{
+    width: 100%;
+    height: 537rpx;
+}
+.vip-bd .scroll-vip .scroll-item{
+    display: inline-block;
+    width: 332rpx;
+    height: 534rpx;
+    margin-left: 20rpx;
+    position: relative;
+}
+.vip-bd .scroll-vip .scroll-item:first-child{
+    margin-left: 30rpx;
+}
+.vip-bd .scroll-vip .scroll-item:last-child{
+    margin-right: 30rpx;
+}
+.scroll-vip .scroll-item .banner-box{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 385rpx;
+    border-radius: 16rpx;
+    overflow: hidden;
+}
+.scroll-vip .scroll-item .banner-box .picimg{
+    width: 100%;
+    height: 100%;
+}
+.scroll-vip .scroll-item .item-title{
+    padding-top: 25rpx;
+    line-height: 44rpx;
+    height: 88rpx;
+    font-size: 36rpx;
+    color: #333;
+    padding: 0 14rpx;
+    white-space:pre-wrap;
+    display:block;
+    position:absolute;
+    top:410rpx;
+    left: 0;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    display:-webkit-box;
+    -webkit-line-clamp:2;
+    -webkit-box-orient:vertical;
+}
+
+/* 活动栏目 */
+
+.active {
+    padding: 30rpx 0;
+    overflow:hidden;
+}
+
+.active-col {
+    border-radius: 30rpx;
+    background: #fff;
+    width: 670rpx;
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto 40rpx auto;
+    box-shadow: 0 5rpx 15rpx rgba(0, 0, 0, 0.2);
+}
+
+.active-col .active-status {
+    background: url(http://xm-file.oss-cn-beijing.aliyuncs.com/wchat/active-status.png) no-repeat;
+    background-size: 100% 100%;
+    width: 100rpx;
+    line-height: 35rpx;
+    position: absolute;
+    right: 33rpx;
+    top: 33rpx;
+    height: 35rpx;
+    font-size: 22rpx;
+    color: #56606b;
+    text-align: center;
+}
+
+.active-col .col-img {
+    width: 670rpx;
+    height: 350rpx;
+    overflow: hidden;
+}
+
+.active-col .col-img .img {
+    width: 670rpx;
+    height: 350rpx;
+}
+
+.active-col .col-con {
+    padding: 25rpx 30rpx;
+    line-height: 48rpx;
+    overflow: hidden;
+    clear: both;
+}
+
+.active-col .col-con .col-title {
+    font-size: 36rpx;
+    color: #333;
+    font-weight: 600;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    max-height: 96rpx;
+    min-height: 48rpx;
+    -webkit-box-orient: vertical;
+}
+
+.active-col .col-con .col-txt {
+    padding-top: 16rpx;
+    overflow: hidden;
+    line-height: 42rpx;
+}
+
+.active-col .col-con .tag {
+    float: right;
+    font-size: 26rpx;
+    color: #cda87a;
+}
+
+.date {
+    color: #999;
+    font-size: 26rpx;
+}
+
+.addr {
+    color: #999;
+    font-size: 26rpx;
+}
+
+.over-end {
+    margin: 30rpx 0;
+    padding: 20rpx 0;
+    text-align: center;
+    font-size: 30rpx;
+    color: #999;
+    position: relatvie;
+}
+
+.over-end:after {
+    content: ".";
+    display: block;
+    height: 1rpx;
+    position: absolute;
+    top: 50rpx;
+    width: 100%;
+    background: #f0f0f0;
+}
+.fixed-tool {
+    position: fixed;
+    bottom: 120rpx;
+}

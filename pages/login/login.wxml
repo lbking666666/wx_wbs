@@ -1,0 +1,28 @@
+<!--登录页面-->
+<view class="login-pages container">
+    <view class="logo">
+    </view>
+    <view class="form-box">
+        <view class="form-col">
+            <view class="form-tip" hidden="{{userClear}}">手机号</view>
+            <input class="form-input" maxlength="11" value="{{userTxt}}" placeholder="请输入手机号" placeholderStyle="color:#999" type="number" bindinput="bindUser"></input>
+            <view class="icon form-input-clear" hidden="{{userClear}}" bindtap="clearUserTxt"></view>
+        </view>
+        <view class="form-col">
+            <view class="form-tip" hidden="{{passClear}}">密码</view>
+            <input class="form-input" password='{{isShowPassword}}' value="{{passTxt}}" placeholder="请输入密码" placeholderStyle="color:#999" type="text" bindinput="bindPass"></input>
+            <view class="icon is-eye form-input-clear" hidden="{{passClear}}" bindtap="clearPassTxt"></view>
+            <view class="icon form-input-eye" wx:if="{{!passClear && isShowPassword}}" bindtap="eyePassTxt"></view>
+            <view class="icon form-input-eye-open" wx:if="{{!passClear && !isShowPassword}}" bindtap="eyePassTxt"></view>
+        </view>
+        <view class="form-button">
+            <button class="form-btn" bindgetuserinfo="postData" open-type="getUserInfo" lang="zh_CN">登录</button>
+        </view>
+        <view class="form-text clearfix">
+            <view class="link fl" bindtap="forgetPass">忘记密码</view>
+            <button class="link fr" hover-class="nobg" bindgetuserinfo="quickLogin" open-type="getUserInfo" lang="zh_CN">短信验证登录</button>
+        </view>
+        
+        <button class="link reg" hover-class="nobg" bindgetuserinfo="quickRegist" open-type="getUserInfo" lang="zh_CN">还没有账号？<text class="c8a063">快速注册</text></button>
+    </view>
+</view>

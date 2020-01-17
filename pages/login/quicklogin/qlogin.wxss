@@ -1,0 +1,74 @@
+.register-page{
+  display: flex;
+  flex-direction: column;
+}
+.register-page .logo{
+  //background:url(https://xm-file.oss-cn-beijing.aliyuncs.com/cf/img/logo@3x.png) no-repeat;
+  background: url(https://xm-file.oss-cn-beijing.aliyuncs.com/cf/logo@3x-2.png) no-repeat;
+  background-size:100% 100%;
+  width:508rpx;
+  height:80rpx;
+  margin:178rpx auto 100rpx;
+}
+.register-page .form-box{
+  width: 690rpx;
+}
+.register-page .form-box .form-col{
+  width:692rpx;
+  padding-top:54rpx;
+  position:relative;
+}
+.form-box .form-col .form-tip{
+  top: 30rpx;
+}
+.form-box .form-col .captcha-image{
+  position:absolute;
+  right:0;
+  bottom:5rpx;
+  width:176rpx;
+  height:69rpx;
+  z-index:9;
+}
+.form-box .form-col .getcaptcha-btn,
+.form-box .form-col .captcha-seconds{
+  font-size: 26rpx;
+  color: #c8a063;
+  border: 1px solid #c8a063;
+  text-align: center;
+  height: 60rpx;
+  line-height: 60rpx;
+  width: 200rpx;
+  position: absolute;
+  right: 0;
+  bottom: 12rpx;
+  border-radius: 5rpx;
+  z-index: 9;
+}
+
+.form-button .fake-btn{
+  width:100%;
+  height:100rpx;
+  color:#fff;
+  font-size:30rpx;
+  line-height:100rpx;
+  background:#c9a063;
+  border-radius: 0;
+}
+.form-button .form-btn{
+  width:100%;
+  height:100rpx;
+  color:#fff;
+  font-size:30rpx;
+  line-height:100rpx;
+  background:#eaa848;
+  border-radius: 0;
+}
+
+.proc {
+  font-size: 28rpx;
+  color: #999;
+  margin-top: 80rpx;
+}
+.proc .c8a063 { 
+  color: #c8a063
+}

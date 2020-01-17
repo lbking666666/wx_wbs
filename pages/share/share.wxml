@@ -1,0 +1,7 @@
+<!-- 分享页面 -->
+<view class="share-warp">
+    <view class="share-button">
+        <button class="share-btn btn-1" openType="share"></button>
+        <button class="share-btn btn-2" bindtap="sharePoster"></button>
+    </view>
+</view>

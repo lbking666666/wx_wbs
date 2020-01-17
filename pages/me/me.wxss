@@ -1,0 +1,309 @@
+.My{
+  background:url(http://xm-file.oss-cn-beijing.aliyuncs.com/wchat/home-bg.png) no-repeat;
+  background-size:100% auto;
+  width:100%;
+}
+.My .My-up{
+  padding-top: 40rpx;
+}
+.My .My-up .card-box{
+  height: 380rpx;
+  width: 690rpx;
+  border-radius: 20rpx;
+  overflow: hidden;
+  box-shadow: 0 5rpx 12rpx rgba(0, 0, 0, 0.2)
+}
+.My .My-up .info-card{
+  margin: 0 30rpx;
+}
+.My .My-up .info-card.normal{
+  background: url(http://xm-file.oss-cn-beijing.aliyuncs.com/wchat/usercard-normal.png) no-repeat;
+  background-size: 100% 100%;
+}
+.My .My-up .normal .d-font{
+  color: #888;
+}
+.My .My-up .normal .s-font{
+  color: #cda87a;
+}
+.My .My-up .normal .p-1{
+  color: #333;
+}
+.My .My-up .normal .level-icon{
+  border: 1px solid #888;
+  color: #888;
+}
+
+.My .My-up .info-card.silver{
+  background: url(http://xm-file.oss-cn-beijing.aliyuncs.com/wchat/usercard-silver.png) no-repeat;
+  background-size: 100% 100%;
+}
+.My .My-up .silver .d-font{
+  color: #666;
+}
+.My .My-up .silver .s-font{
+  color: #fff;
+}
+.My .My-up .silver .level-icon{
+  border: 1px solid #666;
+  color: #666;
+}
+
+.My .My-up .info-card.gold{
+  background: url(http://xm-file.oss-cn-beijing.aliyuncs.com/wchat/usercard-gold.png) no-repeat;
+  background-size: 100% 100%;
+}
+.My .My-up .gold .d-font{
+  color: #927f4b;
+}
+.My .My-up .gold .s-font{
+  color: #fff;
+}
+.My .My-up .gold .level-icon{
+  border: 1px solid #927f4b;
+  color: #927f4b;
+}
+
+.My .My-up .info-card.platinum{
+  background: url(http://xm-file.oss-cn-beijing.aliyuncs.com/wchat/usercard-platinum.png) no-repeat;
+  background-size: 100% 100%;
+}
+.My .My-up .platinum .d-font{
+  color: #6f97ab;
+}
+.My .My-up .platinum .s-font{
+  color: #fff;
+}
+.My .My-up .platinum .level-icon{
+  border: 1px solid #6f97ab;
+  color: #6f97ab;
+}
+
+.My-up .info-card .lf-box{
+  float: left;
+  padding: 50rpx 30rpx 0 40rpx;
+}
+.My-up .info-card .lf-box .head-img{
+  width: 120rpx;
+  height: 120rpx;
+  border: 3rpx solid #fff;
+  border-radius: 63rpx;
+  overflow: hidden;
+}
+.My-up .info-card .rt-box{
+  float: left;
+  width: 485rpx;
+  padding: 69rpx 0 0 0;
+}
+.My-up .info-card .rt-box .p-1{
+  text-align: left;
+  height: 38rpx;
+  line-height: 38rpx;
+  font-weight: 700;
+}
+.info-card .rt-box .p-1 .level-icon{
+  font-weight: normal;
+  display: inline-block;
+  padding: 0 9rpx;
+  height: 28rpx;
+  line-height: 28rpx;
+  font-size: 20rpx;
+  text-align: center;
+  border-radius: 5rpx;
+  vertical-align: middle;
+  margin-left: 18rpx;
+}
+.info-card .rt-box .p-2{
+  text-align: left;
+  margin-top: 24rpx;
+  height: 28rpx;
+  line-height: 28rpx;
+  font-size: 28rpx;
+}
+.info-card .rt-box .p-2 .v-icon{
+  display: inline-block;
+  width: 25rpx;
+  height: 23rpx;
+}
+.info-card .rt-box .p-2 .diamond-icon{
+  display: inline-block;
+  width: 26rpx;
+  height: 23rpx;
+  margin-left: 40rpx;
+}
+.normal .rt-box .p-2 .v-icon{
+  background: url(http://xm-file.oss-cn-beijing.aliyuncs.com/wchat/v1.png) no-repeat;
+  background-size: 100% 100%;
+}
+.normal .rt-box .p-2 .diamond-icon{
+  background: url(http://xm-file.oss-cn-beijing.aliyuncs.com/wchat/diamond1.png) no-repeat;
+  background-size: 100% 100%;
+}
+.silver .rt-box .p-2 .v-icon{
+  background: url(http://xm-file.oss-cn-beijing.aliyuncs.com/wchat/v2.png) no-repeat;
+  background-size: 100% 100%;
+}
+.silver .rt-box .p-2 .diamond-icon{
+  background: url(http://xm-file.oss-cn-beijing.aliyuncs.com/wchat/diamond2.png) no-repeat;
+  background-size: 100% 100%;
+}
+.gold .rt-box .p-2 .v-icon{
+  background: url(http://xm-file.oss-cn-beijing.aliyuncs.com/wchat/v3.png) no-repeat;
+  background-size: 100% 100%;
+}
+.gold .rt-box .p-2 .diamond-icon{
+  background: url(http://xm-file.oss-cn-beijing.aliyuncs.com/wchat/diamond3.png) no-repeat;
+  background-size: 100% 100%;
+}
+.platinum .rt-box .p-2 .v-icon{
+  background: url(http://xm-file.oss-cn-beijing.aliyuncs.com/wchat/v4.png) no-repeat;
+  background-size: 100% 100%;
+}
+.platinum .rt-box .p-2 .diamond-icon{
+  background: url(http://xm-file.oss-cn-beijing.aliyuncs.com/wchat/diamond4.png) no-repeat;
+  background-size: 100% 100%;
+}
+.info-card .rt-box .p-3{
+  text-align: left;
+  margin-top: 54rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 60rpx;
+}
+.info-card .rt-box .p-3 .hide-points{
+  display: inline-block;
+  vertical-align:top;
+  width:250rpx;
+  height:25rpx;
+  margin-top:18rpx;
+}
+.silver .rt-box .p-3 .hide-points,
+.gold .rt-box .p-3 .hide-points,
+.platinum .rt-box .p-3 .hide-points{
+  background: url(http://xm-file.oss-cn-beijing.aliyuncs.com/wchat/white-hidepoints.png) no-repeat;
+  background-size: 100% 100%;
+}
+.normal .rt-box .p-3 .hide-points{
+  background: url(http://xm-file.oss-cn-beijing.aliyuncs.com/wchat/gold-hidepoints.png) no-repeat;
+  background-size: 100% 100%;
+}
+.info-card .rt-box .p-3 .eye{
+  display: inline-block;
+  vertical-align:top;
+  margin-left:20rpx;
+  width:40rpx;
+  height:29rpx;
+  margin-top:16rpx;
+}
+.silver .rt-box .p-3 .open-eye,
+.gold .rt-box .p-3 .open-eye,
+.platinum .rt-box .p-3 .open-eye{
+  background: url(http://xm-file.oss-cn-beijing.aliyuncs.com/wchat/white-closeeye.png) no-repeat;
+  background-size: 100% 100%;
+}
+.silver .rt-box .p-3 .close-eye,
+.gold .rt-box .p-3 .close-eye,
+.platinum .rt-box .p-3 .close-eye{
+  background: url(http://xm-file.oss-cn-beijing.aliyuncs.com/wchat/white-openeye.png) no-repeat;
+  background-size: 100% 100%;
+}
+.normal .rt-box .p-3 .open-eye{
+  background: url(http://xm-file.oss-cn-beijing.aliyuncs.com/wchat/gold-closeeye.png) no-repeat;
+  background-size: 100% 100%;
+}
+.normal .rt-box .p-3 .close-eye{
+  background: url(http://xm-file.oss-cn-beijing.aliyuncs.com/wchat/gold-openeye.png) no-repeat;
+  background-size: 100% 100%;
+}
+
+.info-card .rt-box .p-4{
+  text-align: left;
+  line-height: 28rpx;
+  font-size: 28rpx;
+  margin-top: 16rpx;
+}
+.My .My-up .menu-box{
+  margin:50rpx 30rpx 0 30rpx;
+  width: 660rpx;
+  height: 373rpx;
+  padding: 27rpx 15rpx 0;
+}
+.My .My-up .menu-box .menu-btn{
+  float: left;
+  width: 220rpx;
+  height: 106rpx;
+  padding: 35rpx 0;
+}
+.My-up .menu-box .menu-btn .menu-icon{
+  width: 100%;
+  height: 58rpx;
+}
+.My-up .menu-box .menu-btn .menu-icon1{
+  background: url(http://xm-file.oss-cn-beijing.aliyuncs.com/wchat/memenu-1.png) no-repeat;
+  background-size: auto 100%;
+  background-position: center; 
+}
+.My-up .menu-box .menu-btn .menu-icon2{
+  background: url(http://xm-file.oss-cn-beijing.aliyuncs.com/wchat/memenu-2.png) no-repeat;
+  background-size: auto 100%;
+  background-position: center; 
+}
+.My-up .menu-box .menu-btn .menu-icon3{
+  background: url(http://xm-file.oss-cn-beijing.aliyuncs.com/wchat/memenu-3.png) no-repeat;
+  background-size: auto 100%;
+  background-position: center; 
+}
+.My-up .menu-box .menu-btn .menu-icon4{
+  background: url(http://xm-file.oss-cn-beijing.aliyuncs.com/wchat/memenu-4.png) no-repeat;
+  background-size: auto 100%;
+  background-position: center; 
+}
+.My-up .menu-box .menu-btn .menu-icon5{
+  background: url(http://xm-file.oss-cn-beijing.aliyuncs.com/wchat/memenu-5.png) no-repeat;
+  background-size: auto 100%;
+  background-position: center; 
+}
+.My-up .menu-box .menu-btn .menu-name{
+  text-align: center;
+  color: #333;
+  font-size: 24rpx;
+  line-height: 24rpx;
+  margin-top: 25rpx;
+}
+.My .My-down{
+  margin-top: 50rpx;
+  width: 100%;
+}
+.My .My-down .down-li{
+  height: 110rpx;
+  line-height: 110rpx;
+  width: 684rpx;
+  padding: 0 33rpx;
+  border-top: 1rpx solid #e8e8e8;
+}
+.My .My-down .down-li .lf-name{
+  float: left;
+  color: #000;
+  font-size: 28rpx;
+}
+.My .My-down .down-li .rt{
+  float: right;
+  font-size: 24rpx;
+  color: #888;
+}
+.My .My-down .down-li .rt-conner{
+  display: inline-block;
+  margin-top: 44rpx;
+  vertical-align: middle;
+  width: 12rpx;
+  height: 22rpx;
+  background: url(http://xm-file.oss-cn-beijing.aliyuncs.com/wchat/conner.png) no-repeat;
+  background-size: 100% 100%;
+  background-position: center; 
+}
+.My .My-down .down-li.quit-btn{
+  text-align: center;
+  color: #888;
+  font-size: 28rpx;
+  border-bottom: 1rpx solid #e8e8e8;
+}

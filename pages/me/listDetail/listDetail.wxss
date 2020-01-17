@@ -1,0 +1,246 @@
+/* pages/me/listDeatil/listDeatil.wxss */
+page{
+  background: rgba(240,240,240,1);
+}
+.detail{
+  background:url(http://xm-file.oss-cn-beijing.aliyuncs.com/wchat/home-bg.png) no-repeat;
+  background-color:#fff;
+  background-size:100% auto;
+  width:100%;
+}
+.detail .detail-up{
+  padding-top: 40rpx;
+}
+.detail .detail-up .info-card{
+  margin: 0 30rpx;
+  height: 276rpx;
+  width: 630rpx;
+  border-radius: 20rpx;
+  overflow: hidden;
+  box-shadow: 0 5rpx 12rpx rgba(0, 0, 0, 0.2);
+  background: #fff;
+  color: #333;
+  padding: 80rpx 30rpx 0 30rpx;
+}
+.detail-up .info-card .title-p{
+  font-size: 30rpx;
+  color: #333;
+  position: relative;
+  padding-left: 15rpx;
+}
+.detail-up .info-card .title-p::before{
+  content: '';
+  width: 6rpx;
+  height: 26rpx;
+  position: absolute;
+  left: 0;
+  top: 7rpx;
+  background-color: #c9a063;
+}
+.detail-up .info-card .money-p{
+  font-size: 64rpx;
+  color: #333;
+  margin-top: 30rpx;
+  position: relative;
+}
+.detail-up .info-card .money-p .img{
+  position: absolute;
+  right: 0;
+  top: 18rpx;
+  width: 174rpx;
+  height: 52rpx;
+}
+.detail-up .info-card .font-p{
+  color: #999;
+  font-size: 28rpx;
+  margin-top: 20rpx;
+}
+.detail-up .info-detail{
+  padding-top: 90rpx;
+  text-align: center;
+}
+.detail-up .info-detail .info{
+  display: inline-block;
+  width:250rpx;
+  margin-left:30rpx;
+  padding-bottom:90rpx;
+  padding-left:95rpx;
+  position: relative;
+  text-align: left;
+  vertical-align: top;
+}
+.detail-up .info-detail .info .info-name{
+  color: #999;
+  font-size: 26rpx;
+}
+.detail-up .info-detail .info .info-content{
+  margin-top: 19rpx;
+  color: #333;
+  font-size: 30rpx;
+  font-weight: 700;
+}
+.detail-up .info-detail1 .info .info-icon{
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  width: 80rpx;
+  height: 80rpx; 
+}
+.detail-up .info-detail1 .info .info-icon1{
+  background: url(//xm-file.oss-cn-beijing.aliyuncs.com/cf/my-wealth/qixi_icon.png) no-repeat;
+  background-size: 100% 100%;
+}
+.detail-up .info-detail1 .info .info-icon2{
+  background: url(//xm-file.oss-cn-beijing.aliyuncs.com/cf/my-wealth/daoqi_icon.png) no-repeat;
+  background-size: 100% 100%;
+}
+.detail-up .info-detail1 .info .info-icon3{
+  background: url(//xm-file.oss-cn-beijing.aliyuncs.com/cf/my-wealth/touzi_time_icon.png) no-repeat;
+  background-size: 100% 100%;
+}
+.detail-up .info-detail1 .info .info-icon4{
+  background: url(//xm-file.oss-cn-beijing.aliyuncs.com/cf/my-wealth/yeji_icon.png) no-repeat;
+  background-size: 100% 100%;
+}
+.detail-up .info-detail1 .info .info-icon5{
+  background: url(//xm-file.oss-cn-beijing.aliyuncs.com/cf/my-wealth/huankuan_icon.png) no-repeat;
+  background-size: 100% 100%;
+}
+.detail-up .info-detail1 .info .info-icon6{
+  background: url(//xm-file.oss-cn-beijing.aliyuncs.com/cf/my-wealth/shouyi_icon.png) no-repeat;
+  background-size: 100% 100%;
+}
+.detail-up .info-detail2 .info{
+  display:inline-block;
+  width:250rpx;
+  padding-bottom:90rpx;
+  padding-top: 80rpx;
+  position:relative;
+  vertical-align:top;
+  margin:0;
+  padding-left:0;
+  text-align:center;
+}
+.detail-up .info-detail2 .info .info-icon{
+  position: absolute;
+  top: 0;
+  left: 85rpx;
+  display: inline-block;
+  width: 80rpx;
+  height: 80rpx; 
+}
+.detail-up .info-detail2 .info .info-icon1{
+  background: url(//xm-file.oss-cn-beijing.aliyuncs.com/cf/my-wealth/touzi_icon.png) no-repeat;
+  background-size: 100% 100%;
+}
+.detail-up .info-detail2 .info .info-icon2{
+  background: url(//xm-file.oss-cn-beijing.aliyuncs.com/cf/my-wealth/rengou_icon.png) no-repeat;
+  background-size: 100% 100%;
+}
+.detail-up .info-detail2 .info .info-icon3{
+  background: url(//xm-file.oss-cn-beijing.aliyuncs.com/cf/my-wealth/fengxian_icon.png) no-repeat;
+  background-size: 100% 100%;
+}
+.detail .detail-middle{
+  border-top: 20rpx solid rgba(240,240,240,1);
+  background: #fff;
+}
+.detail .detail-middle .title{
+  padding-left: 30rpx;
+  line-height: 90rpx;
+  height: 90rpx;
+  width: 720rpx;
+  font-size: 34rpx;
+  font-weight: 700;
+  color: #333;
+  border-bottom: 1rpx solid #f4f4f4;
+}
+.detail .detail-middle .record-li{
+  height: 84rpx;
+  width: 690rpx;
+  padding: 33rpx 30rpx;
+  border-bottom: 1rpx solid #f4f4f4;
+}
+.detail-middle .record-li .record-left{
+  float: left;
+  text-align: left;
+}
+.detail-middle .record-li .record-right{
+  float: right;
+  text-align: right;
+}
+.detail-middle .record-li .record-left .record-time{
+  font-size: 30rpx;
+  line-height: 34rpx;
+  color: #333;
+}
+
+.detail-middle .record-li .record-status{
+  margin-top: 18rpx;
+  font-size: 28rpx;
+  line-height: 28rpx;
+  color: #999;
+}
+
+.detail-middle .record-li .record-right .record-money{
+  font-size: 34rpx;
+  line-height: 34rpx;
+  color: #333;
+}
+.detail .detail-down{
+  border-top: 20rpx solid rgba(240,240,240,1);
+  background: #fff;
+}
+.detail .detail-down .title{
+  padding-left: 30rpx;
+  line-height: 90rpx;
+  height: 90rpx;
+  width: 720rpx;
+  font-size: 34rpx;
+  font-weight: 700;
+  color: #333;
+  border-bottom: 1rpx solid #f4f4f4;
+}
+.detail .detail-down .pdf-ul{
+  padding: 40rpx 0;
+}
+.detail .detail-down .pdf-li{
+  height: 63rpx;
+  line-height: 63rpx;
+  width: 545rpx;
+  padding: 0 105rpx 0 100rpx;
+  margin-bottom: 38rpx;
+  position: relative;
+}
+.detail .detail-down .pdf-li::last-child{
+  margin-bottom: 0;
+}
+.detail .detail-down .pdf-li .pdf-icon{
+  position: absolute;
+  top: 0;
+  left: 30rpx;
+  float: left;
+  width: 47rpx;
+  height: 63rpx;
+  background: url(//xm-file.oss-cn-beijing.aliyuncs.com/cf/my-wealth/PFD_icon.png) no-repeat;
+  background-size: 100% 100%;
+}
+.detail .detail-down .pdf-li .pdf-title{
+  font-size: 28rpx;
+  font-weight: 700;
+  max-width: 15rem;
+  overflow: hidden;
+  color: #666;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.detail .detail-down .pdf-li .pdf-btn{
+  position: absolute;
+  right: 30rpx;
+  top: 0;
+  font-size: 28rpx;
+  font-weight: 700;
+  color: #c9a063;
+  border-bottom: 0.075rem solid #c9a063;
+}

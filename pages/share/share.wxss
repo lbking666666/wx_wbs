@@ -1,0 +1,41 @@
+/*********************************************************************
+作者：吕彬
+Q  Q：286504720
+手机：15145090813（微信同号）
+share.wxss 分享页面样式
+*********************************************************************/
+
+.share-warp {
+    height: 100%;
+    width: 100%;
+    background: url(http://xm-file.oss-cn-beijing.aliyuncs.com/wchat/share-bg.png?12) no-repeat;
+    background-size: 100% 100%;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.share-button {
+    position: absolute;
+    bottom: 180rpx;
+    left: 0;
+    width: 100%;
+}
+
+.share-btn {
+    width: 460rpx;
+    height: 88rpx;
+    margin: 48rpx auto 0;
+}
+
+.share-button .btn-1 {
+    background: url(http://xm-file.oss-cn-beijing.aliyuncs.com/wchat/share-btn-1.png?11) no-repeat;
+    background-size: 100% 100%;
+}
+
+.share-button .btn-2 {
+    background: url(http://xm-file.oss-cn-beijing.aliyuncs.com/wchat/share-btn-2.png?11) no-repeat;
+    background-size: 100% 100%;
+}
